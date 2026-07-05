@@ -154,9 +154,11 @@
                   </div>
                   <div class="method-body">
                     <p class="method-step">
-                      <strong>1.</strong> Open PowerShell and type
-                      <code class="cmd-inline">claude</code>, then press Enter
-                      to start Claude Code.
+                      <strong>1.</strong> Open PowerShell, navigate to the
+                      folder where you want to keep the project (for example,
+                      your Documents folder), and type
+                      <code class="cmd-inline">claude</code> to start Claude
+                      Code.
                     </p>
                     <p class="method-step">
                       <strong>2.</strong> Tell it to clone your repository — for example:
@@ -200,9 +202,15 @@
                     </p>
                     <div class="cmd-block">cd team-holiday-proposal</div>
                     <p class="cmd-explain">
-                      Moves your terminal session into the folder that was just
-                      created. Every Git command you run after this point
-                      applies to your repository.
+                      Moves your terminal session into the repository folder.
+                      <strong>This is essential</strong> — Git commands only
+                      work when PowerShell is inside the right folder. Think of
+                      it as opening the right drawer before looking for a file.
+                      Every time you open a new PowerShell window, this is the
+                      first command you must run before doing anything else with
+                      Git. If you are unsure which folder you are in, you can
+                      always type <code class="cmd-inline">pwd</code> ("print
+                      working directory") to see the full path.
                     </p>
                     <div class="cmd-block">git status</div>
                     <p class="cmd-explain">
@@ -217,16 +225,239 @@
             </div>
           </div>
 
-          <div class="step-card">
+          <div class="step-card collapsible" id="step-02">
             <div class="step-number">02</div>
             <div class="step-body">
-              <h3>Duis aute irure dolor in reprehenderit</h3>
-              <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.
-              </p>
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="step-02-content"
+              >
+                <h3>Create Branches &amp; Make Your First Commits</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="step-02-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    With your shared repository in place, it is time for each
+                    team member to start contributing. In this exercise everyone
+                    creates their own <strong>branch</strong>, makes changes to
+                    the project, and <strong>commits</strong> those changes.
+                    Pull requests and merging come later — for now the goal is
+                    to get comfortable with the core rhythm of working in Git.
+                  </p>
+                </div>
+
+                <!-- CONCEPTS -->
+                <div class="concept-block">
+                  <p class="concept-label">What is a branch?</p>
+                  <p>
+                    Think of the repository as a shared document your whole
+                    team is working on. A branch is your own private copy of
+                    that document. You can edit it as much as you want without
+                    touching what your teammates are doing. Only when you are
+                    happy with your changes will your version be brought back
+                    together with everyone else's — and that is the next
+                    exercise.
+                  </p>
+                </div>
+
+                <div class="concept-block">
+                  <p class="concept-label">What is a commit?</p>
+                  <p>
+                    A commit is Git's version of pressing Save — but smarter.
+                    Every time you commit, Git takes a permanent snapshot of
+                    your changes and stores it alongside a message you write
+                    explaining what you did. If something breaks later, you can
+                    scroll back through your commits like a timeline and restore
+                    any previous state. Think of commits like checkpoints in a
+                    video game: the more frequently you save, the less you lose
+                    if something goes wrong.
+                  </p>
+                </div>
+
+                <div class="concept-block concept-block--highlight">
+                  <p class="concept-label">Commit best practices — overdo it</p>
+                  <ul class="tips-list">
+                    <li>Commit early and often. Do not wait until the end of your session.</li>
+                    <li>Each commit should represent one completed thought — adding a paragraph, fixing a typo, updating a section heading.</li>
+                    <li>Write messages in plain English: <em>"Add intro paragraph for the holiday pitch"</em> is good. <em>"stuff"</em> or <em>"changes"</em> is not.</li>
+                    <li>A good rule of thumb: your message should complete the sentence <em>"If applied, this commit will&hellip;"</em></li>
+                    <li>There is no such thing as too many commits. You cannot overdo it.</li>
+                  </ul>
+                </div>
+
+                <!-- PART 1 -->
+                <p class="method-section-title">
+                  Part 1 &mdash; Create your branch
+                  <span class="role-tag role-tag--all">Everyone</span>
+                </p>
+                <p class="method-step">
+                  Each team member does this independently on their own
+                  computer. Use your own name or initials in the branch name so
+                  it is easy to identify whose branch is whose.
+                </p>
+                <div class="part-hint">
+                  📁&nbsp; <strong>Before running any commands</strong>, make
+                  sure PowerShell is open and your terminal is inside the
+                  repository folder. Every time you start a new session you
+                  need to navigate back into it:
+                  <div style="margin-top: 8px;">
+                    <code class="cmd-inline">cd team-holiday-proposal</code>
+                  </div>
+                  If you are not sure where the folder is, right-click it in
+                  File Explorer, select <strong>Copy as path</strong>, and
+                  paste that after <code class="cmd-inline">cd</code>. All Git
+                  commands — in this exercise and every exercise from here on —
+                  must be run from inside this folder.
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Option A</span>
+                    Using Claude Code
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      <strong>1.</strong> Open PowerShell, navigate to your
+                      repository folder, and type
+                      <code class="cmd-inline">claude</code> to start Claude Code.
+                    </p>
+                    <p class="method-step">
+                      <strong>2.</strong> Ask it to create your branch:
+                    </p>
+                    <div class="cmd-block">
+                      "Create a new Git branch called [branch-name]"
+                    </div>
+                    <p class="method-step">
+                      <strong>3.</strong> Claude Code will confirm the branch
+                      was created and that you are now on it.
+                    </p>
+                    <p class="cmd-explain">
+                      What is happening: Claude Code is running
+                      <code class="cmd-inline">git checkout -b [branch-name]</code>
+                      — a command that creates the branch and switches you to it
+                      in one step.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Option B</span>
+                    Using PowerShell + Git
+                  </div>
+                  <div class="method-body">
+                    <div class="cmd-block">git checkout -b [your-branch-name]</div>
+                    <p class="cmd-explain">
+                      Creates a new branch with that name and immediately
+                      switches you to it. The <code class="cmd-inline">-b</code>
+                      flag means "create and switch". From this point on, all
+                      your changes stay on this branch and do not affect your
+                      teammates.
+                    </p>
+                    <div class="cmd-block">git branch</div>
+                    <p class="cmd-explain">
+                      Lists all branches in the repository. The one you are
+                      currently on is marked with an asterisk (*). Run this to
+                      confirm you are on the right branch before making any
+                      changes.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- PART 2 -->
+                <p class="method-section-title">
+                  Part 2 &mdash; Make changes and commit
+                  <span class="role-tag role-tag--all">Everyone</span>
+                </p>
+                <p class="method-step">
+                  Open the project files in your editor and make a change —
+                  even adding a single line counts. Then commit it. Repeat this
+                  cycle as many times as you like: <em>change something &rarr;
+                  commit &rarr; change something &rarr; commit.</em>
+                </p>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Option A</span>
+                    Using Claude Code
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      <strong>1.</strong> After making changes to a file, ask
+                      Claude Code to show you what changed:
+                    </p>
+                    <div class="cmd-block">"Show me what I have changed"</div>
+                    <p class="cmd-explain">
+                      Claude Code runs <code class="cmd-inline">git status</code>
+                      and <code class="cmd-inline">git diff</code> and summarises
+                      the changes in plain English.
+                    </p>
+                    <p class="method-step">
+                      <strong>2.</strong> When you are ready to save, ask it to
+                      commit:
+                    </p>
+                    <div class="cmd-block">
+                      "Commit all my changes with the message 'Add [what you
+                      changed]'"
+                    </div>
+                    <p class="cmd-explain">
+                      Claude Code stages everything and creates the commit in
+                      one go. The message you provide becomes the permanent
+                      label for this snapshot — make it descriptive.
+                    </p>
+                    <p class="method-step">
+                      <strong>3.</strong> Repeat every time you finish
+                      something meaningful. Ask Claude Code to commit as often
+                      as you need — there is no limit.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Option B</span>
+                    Using PowerShell + Git
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      Run these three commands every time you want to save your
+                      progress. Think of it as your commit routine.
+                    </p>
+                    <div class="cmd-block">git status</div>
+                    <p class="cmd-explain">
+                      Shows every file you have changed since your last commit.
+                      Run this first — always. It gives you a clear picture of
+                      what is about to be saved.
+                    </p>
+                    <div class="cmd-block">git add .</div>
+                    <p class="cmd-explain">
+                      Stages all your changes, telling Git "include everything
+                      in my next commit". If you only want to commit one
+                      specific file, use
+                      <code class="cmd-inline">git add filename</code> instead.
+                    </p>
+                    <div class="cmd-block">git commit -m "Add your message here"</div>
+                    <p class="cmd-explain">
+                      Creates the commit — your permanent snapshot. Replace the
+                      message with something specific and meaningful:
+                      <em>"Add hero section headline"</em> beats
+                      <em>"update file"</em> every time. The
+                      <code class="cmd-inline">-m</code> flag lets you write the
+                      message inline.
+                    </p>
+                    <div class="warning-note">
+                      🔁&nbsp; <strong>Repeat this routine often.</strong>
+                      status &rarr; add &rarr; commit, every time you finish
+                      something — even something small. The more commits you
+                      have, the safer your work is and the easier it is for
+                      your team to follow what you did.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
 
