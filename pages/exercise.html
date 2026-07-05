@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FZTW - The Exercise</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../styles.css" rel="stylesheet" />
+    <link href="exercise.css" rel="stylesheet" />
+  </head>
+  <body class="page-exercise">
+    <!-- FIXED BACKGROUND LAYERS -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-symbol">></div>
+
+    <!-- FX: SCANLINES -->
+    <div class="fx-scanlines" aria-hidden="true"></div>
+
+    <!-- FX: FILM GRAIN -->
+    <div class="fx-grain" aria-hidden="true"></div>
+
+    <header id="header">
+      <div class="header-left">
+        <span class="logo-accent">></span>
+        <div class="header-title">
+          <h1>Operation: Free Holidays</h1>
+          <div class="header-subtitle">
+            Git &middot; GitHub &middot; HTML/CSS/JS
+          </div>
+        </div>
+      </div>
+      <nav class="header-nav" aria-label="Site navigation">
+        <a href="../index.html">Home</a>
+        <a href="exercise.html" class="active">Exercise</a>
+      </nav>
+      <div class="header-badge">
+        <span class="live-dot"></span>
+        <span>Data & AI Strategy &middot; 2026</span>
+      </div>
+    </header>
+
+    <main>
+      <!-- FX: AURORA -->
+      <div class="fx-aurora" aria-hidden="true">
+        <div class="fx-aurora-1"></div>
+        <div class="fx-aurora-2"></div>
+        <div class="fx-aurora-3"></div>
+        <div class="fx-aurora-4"></div>
+      </div>
+
+      <!-- FX: PERSPECTIVE GRID -->
+      <div class="fx-perspective-grid" aria-hidden="true"></div>
+
+      <!-- CONTENT -->
+      <div class="content-wrapper">
+        <div class="kicker">Workshop exercise &middot; 2026</div>
+        <h2 class="hero-title">
+          Your mission, should you<br />
+          <span>choose to accept it</span>
+        </h2>
+
+        <div class="step-list">
+          <div class="step-card collapsible" id="step-01">
+            <div class="step-number">01</div>
+            <div class="step-body">
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="step-01-content"
+              >
+                <h3>Set Up Your Private Repository</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="step-01-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    A <strong>repository</strong> ("repo") is your project's
+                    home on the internet — a shared folder that records every
+                    change your team makes over time. <strong>One person per
+                    team</strong> acts as the repository owner and completes
+                    Parts 1 and 2. Once that is done,
+                    <strong>every team member</strong> — including the owner —
+                    completes Part 3 to get a local copy on their own computer.
+                  </p>
+                </div>
+
+                <!-- SHARED: PARTS 1 & 2 -->
+                <p class="method-section-title">
+                  Part 1 &mdash; Create the repository on GitHub
+                  <span class="role-tag">Repo owner only</span>
+                </p>
+                <p class="method-step">
+                  <strong>1.</strong> Go to github.com and sign in.
+                </p>
+                <p class="method-step">
+                  <strong>2.</strong> Click the green <strong>New</strong>
+                  button on the top-left of the screen.
+                </p>
+                <p class="method-step">
+                  <strong>3.</strong> Give it a name, for example:
+                  <code class="cmd-inline">team-holiday-proposal</code>.
+                </p>
+                <div class="warning-note">
+                  ⚠️&nbsp; <strong>Set visibility to Private.</strong> This is
+                  essential &mdash; you do not want Jaime reading your draft
+                  arguments before you are ready to present them.
+                </div>
+                <p class="method-step">
+                  <strong>4.</strong> Leave all other options as they are and
+                  click <strong>Create repository</strong>.
+                </p>
+
+                <p class="method-section-title">
+                  Part 2 &mdash; Add your collaborators
+                  <span class="role-tag">Repo owner only</span>
+                </p>
+                <p class="method-step">
+                  <strong>1.</strong> Inside your new repository, click
+                  <strong>Settings</strong> &rarr;
+                  <strong>Collaborators</strong> (left sidebar).
+                </p>
+                <p class="method-step">
+                  <strong>2.</strong> Click <strong>Add people</strong> and
+                  enter each team member's GitHub username or email address.
+                </p>
+                <p class="method-step">
+                  <strong>3.</strong> Each person will receive an email
+                  invitation. They must accept it before they can contribute.
+                </p>
+
+                <!-- SPLIT: PART 3 -->
+                <p class="method-section-title">
+                  Part 3 &mdash; Set up your local copy
+                  <span class="role-tag role-tag--all">Everyone</span>
+                </p>
+                <p class="part-hint">
+                  💡 To find your repository URL, open the repository on
+                  GitHub, click the green <strong>Code</strong> button, make
+                  sure <strong>HTTPS</strong> is selected, and copy the URL
+                  shown there. It will look like
+                  <code class="cmd-inline">https://github.com/username/repo-name.git</code>.
+                </p>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Option A</span>
+                    Using Claude Code
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      <strong>1.</strong> Open PowerShell and type
+                      <code class="cmd-inline">claude</code>, then press Enter
+                      to start Claude Code.
+                    </p>
+                    <p class="method-step">
+                      <strong>2.</strong> Tell it to clone your repository — for example:
+                    </p>
+                    <div class="cmd-block">
+                      "Clone my GitHub repository
+                      https://github.com/YOUR-USERNAME/team-holiday-proposal
+                      into my current folder"
+                    </div>
+                    <p class="method-step">
+                      <strong>3.</strong> Claude Code will download the
+                      repository to your computer and confirm when it is ready.
+                    </p>
+                    <p class="cmd-explain">
+                      What is happening: Claude Code is running
+                      <code class="cmd-inline">git clone</code> on your behalf
+                      — the same command as Option B, but without you having to
+                      type or remember it.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Option B</span>
+                    Using PowerShell + Git
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      Open PowerShell and run these commands one at a time:
+                    </p>
+                    <div class="cmd-block">
+                      git clone
+                      https://github.com/YOUR-USERNAME/team-holiday-proposal.git
+                    </div>
+                    <p class="cmd-explain">
+                      Downloads the repository from GitHub to your computer and
+                      sets up the connection between the two automatically.
+                      Think of it as syncing a shared drive for the first time
+                      &mdash; after this, changes flow both ways.
+                    </p>
+                    <div class="cmd-block">cd team-holiday-proposal</div>
+                    <p class="cmd-explain">
+                      Moves your terminal session into the folder that was just
+                      created. Every Git command you run after this point
+                      applies to your repository.
+                    </p>
+                    <div class="cmd-block">git status</div>
+                    <p class="cmd-explain">
+                      A quick health check: shows which files exist, which ones
+                      have been changed, and which changes are ready to be
+                      saved. Get into the habit of running this often &mdash;
+                      it never hurts.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <div class="step-body">
+              <h3>Duis aute irure dolor in reprehenderit</h3>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <div class="step-body">
+              <h3>Consectetur adipiscing elit sed do</h3>
+              <p>
+                Ut labore et dolore magna aliqua. Quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                aute irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur.
+              </p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <div class="step-body">
+              <h3>Excepteur sint occaecat cupidatat</h3>
+              <p>
+                Sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua ut
+                enim ad minim veniam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Accenture</p>
+      <p class="footer-pill">
+        Holiday fund not guaranteed &mdash; but a good PR significantly improves
+        the odds.
+      </p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="exercise.js"></script>
+  </body>
+</html>

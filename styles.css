@@ -318,6 +318,32 @@ body {
   }
 }
 
+/* NAVBAR */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.header-nav a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--acc-text-muted);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+  letter-spacing: 0.02em;
+}
+.header-nav a:hover {
+  color: var(--acc-purple);
+  background: rgba(161, 0, 255, 0.06);
+}
+.header-nav a.active {
+  color: var(--acc-purple);
+  font-weight: 600;
+  background: rgba(161, 0, 255, 0.08);
+}
+
 /* HEADER */
 header {
   position: sticky;
@@ -619,6 +645,9 @@ footer p {
   }
   .fx-perspective-grid {
     height: 35%;
+  }
+  .header-nav {
+    display: none;
   }
 }
 
