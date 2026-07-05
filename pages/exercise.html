@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FZTW - The Exercise</title>
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -540,29 +540,390 @@
             </div>
           </div>
 
-          <div class="step-card">
+          <div class="step-card collapsible" id="step-03">
             <div class="step-number">03</div>
             <div class="step-body">
-              <h3>Consectetur adipiscing elit sed do</h3>
-              <p>
-                Ut labore et dolore magna aliqua. Quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur.
-              </p>
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="step-03-content"
+              >
+                <h3>[OPTIONAL] Undoing Changes &mdash; How to Go Back in Time</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="step-03-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    One of the biggest advantages of using Git is that
+                    <strong>nothing is ever truly lost</strong>. Every commit
+                    you have made is a permanent checkpoint you can return to at
+                    any point. This section explains how to undo mistakes at
+                    two different stages: before you have committed anything, and
+                    after a commit has already been made.
+                  </p>
+                </div>
+
+                <!-- CONCEPTS -->
+                <div class="concept-block">
+                  <p class="concept-label">Think of it like a timeline</p>
+                  <p>
+                    Every commit you make adds a new entry to your project's
+                    timeline. If you make a change you regret, Git lets you
+                    travel back to any earlier point on that timeline. The key
+                    distinction is <em>when</em> you decide to undo:
+                  </p>
+                  <ul class="tips-list" style="margin-top: 10px;">
+                    <li>
+                      <strong>Before committing</strong> — your changes only
+                      exist on your computer and have not been saved as a
+                      checkpoint yet. Discarding them is instant and complete.
+                    </li>
+                    <li>
+                      <strong>After committing</strong> — the checkpoint already
+                      exists in the history. Git does not delete it; instead it
+                      creates a <em>new</em> commit that undoes the previous one,
+                      keeping the full history intact.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="concept-block concept-block--highlight">
+                  <p class="concept-label">The safe approach: always use revert, not reset</p>
+                  <p>
+                    Git has a command called <code class="cmd-inline">git reset --hard</code>
+                    that can permanently erase commits. <strong>Avoid it.</strong>
+                    Instead, use <code class="cmd-inline">git revert</code> — it
+                    achieves the same result by adding a new "undo" commit rather
+                    than destroying history. Your teammates can always see what
+                    happened and why, and nothing is lost if you change your mind
+                    again later.
+                  </p>
+                </div>
+
+                <!-- SCENARIO 1 -->
+                <p class="method-section-title">
+                  Scenario 1 &mdash; Discard uncommitted changes
+                  <span class="role-tag role-tag--all">Everyone</span>
+                </p>
+                <p class="method-step">
+                  You have edited a file but have <strong>not committed yet</strong>
+                  and want to throw away those changes and go back to the last
+                  saved version.
+                </p>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Option A</span>
+                    Using Claude Code
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      Ask Claude Code to discard the changes to a specific file:
+                    </p>
+                    <div class="cmd-block">
+                      "Discard all my uncommitted changes to [filename] and
+                      restore it to the last committed version"
+                    </div>
+                    <p class="cmd-explain">
+                      Claude Code will confirm what you are about to lose and
+                      ask you to confirm before running the command — a useful
+                      safety net when you are not 100% sure.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Option B</span>
+                    Using PowerShell + Git
+                  </div>
+                  <div class="method-body">
+                    <div class="cmd-block">git status</div>
+                    <p class="cmd-explain">
+                      Always start here. This shows exactly which files have
+                      been changed so you know what you are about to restore.
+                    </p>
+                    <div class="cmd-block">git restore index.html</div>
+                    <p class="cmd-explain">
+                      Replaces the file with the version from your last commit,
+                      discarding every edit you made since then. Replace
+                      <code class="cmd-inline">index.html</code> with the name
+                      of the file you want to restore. To discard all changed
+                      files at once, use
+                      <code class="cmd-inline">git restore .</code> (the dot
+                      means "everything").
+                    </p>
+                    <div class="warning-note">
+                      ⚠️&nbsp; <strong>This cannot be undone.</strong> Once you
+                      run <code class="cmd-inline">git restore</code>, the
+                      uncommitted changes are gone permanently. Make sure you
+                      really do not need them before running it.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- SCENARIO 2 -->
+                <p class="method-section-title">
+                  Scenario 2 &mdash; Undo a commit that has already been made
+                  <span class="role-tag role-tag--all">Everyone</span>
+                </p>
+                <p class="method-step">
+                  You have already committed a change and now want to undo it.
+                  Git will not erase the original commit — it will create a new
+                  one that reverses it, so the full history stays clean and
+                  visible to your teammates.
+                </p>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Option A</span>
+                    Using Claude Code
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      <strong>1.</strong> First, ask Claude Code to show you
+                      the recent history so you can identify which commit to
+                      undo:
+                    </p>
+                    <div class="cmd-block">"Show me the last 10 commits in this repository"</div>
+                    <p class="cmd-explain">
+                      Claude Code will display a list of commits with their
+                      dates, authors, and messages — easy to scan without
+                      needing to read raw Git output.
+                    </p>
+                    <p class="method-step">
+                      <strong>2.</strong> Once you have identified the commit
+                      you want to undo, ask Claude Code to revert it:
+                    </p>
+                    <div class="cmd-block">
+                      "Revert the commit with the message '[the commit message
+                      you want to undo]'"
+                    </div>
+                    <p class="cmd-explain">
+                      Claude Code will locate the correct commit, run
+                      <code class="cmd-inline">git revert</code>, and create a
+                      new commit that cancels out the change. Your history
+                      remains intact.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Option B</span>
+                    Using PowerShell + Git
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      <strong>1.</strong> First, view the commit history to find
+                      the ID of the commit you want to undo:
+                    </p>
+                    <div class="cmd-block">git log --oneline</div>
+                    <p class="cmd-explain">
+                      Prints a compact list of commits, one per line. Each line
+                      starts with a short ID (7 characters) followed by the
+                      commit message — for example:
+                      <code class="cmd-inline">a3f9d12 Add intro paragraph</code>.
+                      Copy the ID of the commit you want to reverse.
+                    </p>
+                    <p class="method-step">
+                      <strong>2.</strong> Revert that commit:
+                    </p>
+                    <div class="cmd-block">git revert a3f9d12</div>
+                    <p class="cmd-explain">
+                      Replace <code class="cmd-inline">a3f9d12</code> with the
+                      actual ID from your log. Git creates a new commit that
+                      undoes exactly what that original commit did, leaving
+                      everything else untouched. Your history grows by one
+                      entry — it never shrinks.
+                    </p>
+                    <div class="part-hint">
+                      💡&nbsp; A text editor may open asking you to write a
+                      message for the revert commit. If that happens, the
+                      default message Git suggests is fine — just close the
+                      editor window and Git will proceed automatically.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
 
-          <div class="step-card">
+          <div class="step-card collapsible" id="step-04">
             <div class="step-number">04</div>
             <div class="step-body">
-              <h3>Excepteur sint occaecat cupidatat</h3>
-              <p>
-                Sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua ut
-                enim ad minim veniam.
-              </p>
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="step-04-content"
+              >
+                <h3>Keeping Secrets Off GitHub &mdash; Local Data Files</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="step-04-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    Your HTML page will eventually contain real information —
+                    team names, budget figures, internal references, or anything
+                    else you would rather keep private. Putting all of that
+                    directly into <code class="cmd-inline">index.html</code>
+                    means it gets uploaded to GitHub every time you commit.
+                    This section explains how to separate what is
+                    <strong>safe to share</strong> (the page design and
+                    structure) from what is <strong>private</strong> (the actual
+                    data), and how to make Git ignore your private files
+                    completely.
+                  </p>
+                </div>
+
+                <!-- CONCEPTS -->
+                <div class="concept-block">
+                  <p class="concept-label">The template idea</p>
+                  <p>
+                    Think of a form letter. The letter itself — its layout,
+                    font, and wording — is the template. The recipient's name
+                    and address are the data, and they change for every copy.
+                    Your HTML page works the same way: the design and structure
+                    (the template) lives on GitHub and is safe to share. The
+                    real values — names, numbers, sensitive details — live in a
+                    separate file on your computer and never leave it.
+                  </p>
+                </div>
+
+                <div class="concept-block">
+                  <p class="concept-label">What is a JSON file?</p>
+                  <p>
+                    A JSON file is a plain text file that stores information
+                    with labels. Think of it like a two-column table — on the
+                    left is the label, on the right is the value. For example:
+                  </p>
+                  <div class="cmd-block" style="margin-top: 10px; white-space: pre;">&#123;
+  "teamName": "Data &amp; AI Strategy",
+  "destination": "Lisbon",
+  "budget": "5,000"
+&#125;</div>
+                  <p style="margin-top: 8px; font-size: 0.84rem; color: var(--acc-text-muted); line-height: 1.65;">
+                    Your HTML page can read this file automatically and display
+                    those values wherever you tell it to. You update the file,
+                    the page updates. No file on GitHub ever changes.
+                  </p>
+                </div>
+
+                <div class="concept-block concept-block--highlight">
+                  <p class="concept-label">The pattern to follow</p>
+                  <ul class="tips-list">
+                    <li>
+                      <strong>index.html</strong> — your template. Contains the
+                      design, structure, and placeholder elements. Committed to
+                      GitHub. Safe to share.
+                    </li>
+                    <li>
+                      <strong>team-data.json</strong> — your private data file.
+                      Contains real names, figures, and sensitive details. Lives
+                      only on your computer. Never committed to GitHub.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="concept-block">
+                  <p class="concept-label">What is .gitignore?</p>
+                  <p>
+                    A <code class="cmd-inline">.gitignore</code> file is a
+                    simple text file that acts as a blocklist for Git. Any
+                    filename you write inside it becomes completely invisible to
+                    Git — it will never be staged, committed, or uploaded to
+                    GitHub, no matter how many times you run
+                    <code class="cmd-inline">git add</code>. The file continues
+                    to exist and work perfectly on your computer; Git simply
+                    pretends it does not exist.
+                  </p>
+                  <p style="margin-top: 8px; font-size: 0.84rem; color: var(--acc-text-muted); line-height: 1.65;">
+                    Think of it like a "do not pack" list before a trip. You
+                    write down what you want to leave at home, and from that
+                    point on those items never make it into the suitcase —
+                    regardless of who is doing the packing. Your
+                    <code class="cmd-inline">team-data.json</code> goes on that
+                    list, and GitHub never sees it.
+                  </p>
+                </div>
+
+                <!-- HOW TO DO IT -->
+                <p class="method-section-title">
+                  Setting it up &mdash; Using Claude Code
+                  <span class="role-tag role-tag--all">Everyone</span>
+                </p>
+                <p class="method-step">
+                  Follow these steps in order. Each prompt builds on the
+                  previous one, so complete them as a sequence inside the same
+                  Claude Code session.
+                </p>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Step 1</span>
+                    Create your private data file
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      Ask Claude Code to create the JSON file with your real
+                      data. Describe the information you want to store:
+                    </p>
+                    <div class="cmd-block">
+                      "Create a file called team-data.json with the following
+                      information: team name is '[your team name]', destination
+                      is '[your chosen holiday destination]', budget is
+                      '[amount]', and team members are '[name 1]', '[name 2]',
+                      '[name 3]'"
+                    </div>
+                    <p class="cmd-explain">
+                      Claude Code will create the file in the correct JSON
+                      format. This file stays on your computer only — it is not
+                      committed anywhere yet.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Step 2</span>
+                    Update your HTML to read from the file
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      Ask Claude Code to turn your HTML into a template that
+                      loads its content from the JSON file:
+                    </p>
+                    <div class="cmd-block">
+                      "Update index.html so that it reads team name, destination,
+                      budget, and team members from team-data.json and displays
+                      them in the page. Where those values currently appear as
+                      plain text, replace them with placeholders that get filled
+                      in automatically when the page loads"
+                    </div>
+                    <p class="cmd-explain">
+                      Claude Code will add a small piece of JavaScript to the
+                      page that fetches <code class="cmd-inline">team-data.json</code>
+                      when the page opens and fills in the right spots
+                      automatically. Your HTML becomes the blank form; the JSON
+                      file fills it in.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="part-hint">
+                  💡&nbsp; <strong>Working with a local server.</strong> Reading
+                  a JSON file from HTML requires the page to be served through
+                  a local web server rather than opened directly as a file. If
+                  you are using VS Code, install the
+                  <strong>Live Server</strong> extension and click
+                  <strong>Go Live</strong> at the bottom of the screen. Ask
+                  Claude Code to help you set this up if needed:
+                  <em>"Help me serve this project with a local web server so
+                  the JSON file can be loaded by the page"</em>.
+                </div>
+
+              </div>
             </div>
           </div>
         </div>

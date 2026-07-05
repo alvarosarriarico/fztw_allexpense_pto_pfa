@@ -3,7 +3,7 @@
   height: auto;
 }
 .page-exercise main {
-  flex: none;
+  flex: 1;
   align-items: flex-start;
   padding-top: 48px;
   padding-bottom: 48px;
