@@ -1423,6 +1423,164 @@ git commit -m "Resolve merge conflicts"</div>
             </div>
           </div>
 
+          <div class="step-card collapsible" id="step-08">
+            <div class="step-number">08</div>
+            <div class="step-body">
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="step-08-content"
+              >
+                <h3>Publishing Your Project with GitHub Pages</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="step-08-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    Once your work is merged into
+                    <code class="cmd-inline">main</code>, you can publish it
+                    as a live website — for free, directly from your GitHub
+                    repository — using a feature called
+                    <strong>GitHub Pages</strong>. No hosting provider, no
+                    server configuration, no cost.
+                  </p>
+                </div>
+
+                <div class="concept-block">
+                  <p class="concept-label">What is GitHub Pages?</p>
+                  <p>
+                    GitHub Pages is a built-in GitHub feature that takes the
+                    files in your repository and serves them as a public
+                    website. Any <code class="cmd-inline">index.html</code>
+                    file at the root of your repo becomes the homepage, and
+                    the URL follows a predictable pattern:
+                  </p>
+                  <div class="cmd-block" style="margin-top: 10px;">
+                    https://your-username.github.io/your-repo-name/
+                  </div>
+                  <p style="margin-top: 10px;">
+                    There is nothing to install or deploy manually — every
+                    time you push to the branch GitHub Pages is watching, the
+                    site updates automatically within a minute or two.
+                  </p>
+                </div>
+
+                <div class="warning-note" style="margin-top: 14px;">
+                  ⚠️&nbsp; <strong>GitHub Pages requires a public
+                  repository.</strong> When you enable GitHub Pages on a free
+                  GitHub account, your repository must be set to
+                  <strong>Public</strong> — meaning anyone on the internet
+                  can read every file in it, including your HTML, any data
+                  files, and your full commit history.<br /><br />
+                  <strong>Before making your repo public, make sure
+                  it contains no sensitive information:</strong> no personal
+                  data, no credentials or API keys, no internal documents,
+                  and no confidential business content. If you are unsure
+                  whether something is safe to publish, keep the repository
+                  Private and do not enable GitHub Pages.
+                </div>
+
+                <p class="method-step" style="margin-top: 18px;">
+                  Once you have confirmed there is nothing sensitive in your
+                  repository, follow the steps below to go live.
+                  <span class="role-tag">Repo owner only</span>
+                </p>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Step 1</span>
+                    Make the repository public
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      <strong>1.</strong> Go to your repository on GitHub and
+                      click <strong>Settings</strong>.
+                    </p>
+                    <p class="method-step">
+                      <strong>2.</strong> Scroll down to the
+                      <strong>Danger Zone</strong> section at the bottom of
+                      the General tab.
+                    </p>
+                    <p class="method-step">
+                      <strong>3.</strong> Click <strong>Change
+                      visibility</strong> → <strong>Make public</strong>.
+                      GitHub will ask you to type the repository name to
+                      confirm — this is a safety check because the action
+                      cannot be undone without manually switching back.
+                    </p>
+                    <div class="part-hint">
+                      💡&nbsp; You can change a repository back to Private at
+                      any time from the same settings page. However, anything
+                      that was public during that window may have already been
+                      indexed by search engines or cached by third parties.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Step 2</span>
+                    Enable GitHub Pages
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      <strong>1.</strong> Still in <strong>Settings</strong>,
+                      click <strong>Pages</strong> in the left sidebar (under
+                      the <em>Code and automation</em> section).
+                    </p>
+                    <p class="method-step">
+                      <strong>2.</strong> Under <strong>Branch</strong>, open
+                      the drop-down that says <em>None</em> and select
+                      <strong>main</strong>. Leave the folder set to
+                      <strong>/ (root)</strong>.
+                    </p>
+                    <p class="method-step">
+                      <strong>3.</strong> Click <strong>Save</strong>.
+                    </p>
+                    <p class="cmd-explain">
+                      GitHub will take a minute or two to build and deploy
+                      the site for the first time. Refresh the Pages settings
+                      page and a banner will appear with your live URL once
+                      it is ready.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    <span class="method-tag">Step 3</span>
+                    Visit and share your live site
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      Your site is now live at:
+                    </p>
+                    <div class="cmd-block">
+                      https://your-username.github.io/your-repo-name/
+                    </div>
+                    <p class="cmd-explain">
+                      Replace <code class="cmd-inline">your-username</code>
+                      with your GitHub username and
+                      <code class="cmd-inline">your-repo-name</code> with the
+                      exact name of your repository. From now on, every push
+                      to <code class="cmd-inline">main</code> will
+                      automatically update the live site — usually within
+                      60&ndash;90 seconds.
+                    </p>
+                    <div class="part-hint">
+                      💡&nbsp; <strong>Pin the URL:</strong> share it with
+                      your team and add it to your repository's
+                      <em>About</em> section on GitHub (the settings cog next
+                      to the repository description at the top of the repo
+                      page) so it is easy to find.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </main>
