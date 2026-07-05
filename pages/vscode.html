@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FZTW - VS Code</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../styles.css" rel="stylesheet" />
+    <link href="vscode.css" rel="stylesheet" />
+  </head>
+  <body class="page-vscode">
+    <!-- FIXED BACKGROUND LAYERS -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-symbol">></div>
+
+    <!-- FX: SCANLINES -->
+    <div class="fx-scanlines" aria-hidden="true"></div>
+
+    <!-- FX: FILM GRAIN -->
+    <div class="fx-grain" aria-hidden="true"></div>
+
+    <header id="header">
+      <div class="header-left">
+        <span class="logo-accent">></span>
+        <div class="header-title">
+          <h1>Operation: Free Holidays</h1>
+          <div class="header-subtitle">
+            Git &middot; GitHub &middot; HTML/CSS/JS
+          </div>
+        </div>
+      </div>
+      <nav class="header-nav" aria-label="Site navigation">
+        <a href="../index.html">Home</a>
+        <a href="exercise.html">Exercise</a>
+        <a href="vscode.html" class="active">VS Code</a>
+        <a href="docs.html">Resources</a>
+      </nav>
+      <div class="header-badge">
+        <span class="live-dot"></span>
+        <span>Data &amp; AI Strategy &middot; 2026</span>
+      </div>
+    </header>
+
+    <main>
+      <!-- FX: AURORA -->
+      <div class="fx-aurora" aria-hidden="true">
+        <div class="fx-aurora-1"></div>
+        <div class="fx-aurora-2"></div>
+        <div class="fx-aurora-3"></div>
+        <div class="fx-aurora-4"></div>
+      </div>
+
+      <!-- FX: PERSPECTIVE GRID -->
+      <div class="fx-perspective-grid" aria-hidden="true"></div>
+
+      <!-- CONTENT -->
+      <div class="content-wrapper">
+        <div class="kicker">Your coding environment &middot; 2026</div>
+        <h2 class="hero-title">
+          Set it up once,<br />
+          <span>use it forever</span>
+        </h2>
+
+        <div class="step-list">
+
+          <!-- STEP 1: INSTALLATION -->
+          <div class="step-card collapsible" id="step-01">
+            <div class="step-number">01</div>
+            <div class="step-body">
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="step-01-content"
+              >
+                <h3>Installing VS Code on Windows</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="step-01-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    Visual Studio Code (VS Code) is a free code editor made by
+                    Microsoft. It is the industry standard for writing HTML, CSS,
+                    JavaScript, and almost any other language. Installation takes
+                    about three minutes and does not require any technical
+                    knowledge.
+                  </p>
+                </div>
+
+                <p class="method-section-title">Installation steps</p>
+
+                <p class="method-step">
+                  <strong>1.</strong> Open your browser and go to
+                  <a href="https://code.visualstudio.com" target="_blank" rel="noopener" class="inline-link">code.visualstudio.com</a>.
+                </p>
+                <p class="method-step">
+                  <strong>2.</strong> Click the large blue
+                  <strong>Download for Windows</strong> button. A
+                  <code class="cmd-inline">.exe</code> file will download to
+                  your Downloads folder.
+                </p>
+                <p class="method-step">
+                  <strong>3.</strong> Open the downloaded file. If Windows shows
+                  a security prompt saying <em>"Do you want to allow this app to
+                  make changes?"</em>, click <strong>Yes</strong> — this is
+                  expected and safe.
+                </p>
+                <p class="method-step">
+                  <strong>4.</strong> Click through the installer screens. When
+                  you reach the <strong>Select Additional Tasks</strong> screen,
+                  tick these two options before clicking Next:
+                </p>
+                <ul class="setup-checklist">
+                  <li>
+                    <span class="check-icon">☑</span>
+                    <span><strong>Add "Open with Code" action to Windows Explorer context menu</strong> — lets you right-click any folder and open it directly in VS Code.</span>
+                  </li>
+                  <li>
+                    <span class="check-icon">☑</span>
+                    <span><strong>Add to PATH</strong> — lets you type <code class="cmd-inline">code</code> in PowerShell to open VS Code from the terminal.</span>
+                  </li>
+                </ul>
+                <p class="method-step">
+                  <strong>5.</strong> Click <strong>Install</strong>, wait about
+                  30 seconds, then click <strong>Finish</strong>. VS Code will
+                  open automatically.
+                </p>
+
+                <div class="part-hint">
+                  💡&nbsp; If VS Code does not open automatically, find it in
+                  your Start menu by searching <strong>Visual Studio Code</strong>.
+                  Pin it to your taskbar so it is always one click away.
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: FIRST-TIME SETUP -->
+          <div class="step-card collapsible" id="step-02">
+            <div class="step-number">02</div>
+            <div class="step-body">
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="step-02-content"
+              >
+                <h3>Getting Familiar &mdash; First-Time Setup</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="step-02-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    VS Code opens to a Welcome tab the first time you launch it.
+                    A few quick settings will make your day-to-day experience
+                    much smoother — none of them require any technical knowledge
+                    to configure.
+                  </p>
+                </div>
+
+                <p class="method-section-title">The interface at a glance</p>
+                <p class="method-step">
+                  VS Code is divided into a few key areas you will use every day:
+                </p>
+                <ul class="setup-checklist">
+                  <li>
+                    <span class="check-icon area-icon">&#9776;</span>
+                    <span><strong>Activity Bar</strong> (left strip of icons) — switches between the file explorer, search, Git panel, and extensions.</span>
+                  </li>
+                  <li>
+                    <span class="check-icon area-icon">&#128196;</span>
+                    <span><strong>Explorer</strong> (first icon, looks like two files) — shows all the files and folders in your project.</span>
+                  </li>
+                  <li>
+                    <span class="check-icon area-icon">&#9998;</span>
+                    <span><strong>Editor</strong> (main area) — where you read and write code. You can have multiple files open as tabs.</span>
+                  </li>
+                  <li>
+                    <span class="check-icon area-icon">&#9654;</span>
+                    <span><strong>Terminal</strong> (bottom panel) — a PowerShell window built into VS Code. This is where you run Git commands and Claude Code.</span>
+                  </li>
+                </ul>
+
+                <p class="method-section-title" style="margin-top: 24px;">Recommended settings</p>
+
+                <p class="method-step">
+                  <strong>Open your project folder.</strong> Go to
+                  <strong>File &rarr; Open Folder</strong>, navigate to your
+                  repository folder, and click <strong>Select Folder</strong>.
+                  VS Code remembers the last folder you opened and will return
+                  to it automatically next time.
+                </p>
+
+                <p class="method-step">
+                  <strong>Enable Auto Save.</strong> Go to
+                  <strong>File &rarr; Auto Save</strong> and click it to enable
+                  it. A tick will appear next to it. This saves your files
+                  automatically as you type so you never lose a change by
+                  forgetting to press <code class="cmd-inline">Ctrl + S</code>.
+                </p>
+
+                <p class="method-step">
+                  <strong>Open the terminal.</strong> Go to
+                  <strong>View &rarr; Terminal</strong> or press
+                  <code class="cmd-inline">Ctrl + `</code> (the backtick key,
+                  just left of the 1 key). The terminal opens at the bottom of
+                  the screen, already pointing at your project folder — you do
+                  not need to <code class="cmd-inline">cd</code> anywhere when
+                  you open it this way.
+                </p>
+
+                <p class="method-step">
+                  <strong>Adjust font size.</strong> Hold
+                  <code class="cmd-inline">Ctrl</code> and scroll up or down
+                  inside the editor to make text larger or smaller instantly.
+                </p>
+
+                <p class="method-step">
+                  <strong>Use the Command Palette.</strong> Press
+                  <code class="cmd-inline">Ctrl + Shift + P</code> to open a
+                  search bar for every feature and setting in VS Code. If you
+                  ever cannot find something in the menus, type what you are
+                  looking for here.
+                </p>
+
+                <div class="warning-note">
+                  💡&nbsp; <strong>When you open the terminal inside VS Code</strong>,
+                  it automatically starts in your project folder — so you do not
+                  need to run <code class="cmd-inline">cd</code> first. This is
+                  the easiest way to avoid the "wrong folder" problem described
+                  in the exercises.
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: EXTENSIONS -->
+          <div class="step-card collapsible" id="step-03">
+            <div class="step-number">03</div>
+            <div class="step-body">
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="step-03-content"
+              >
+                <h3>Extensions &mdash; Supercharge Your Editor</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="step-03-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    Extensions are add-ons that give VS Code new capabilities.
+                    Think of them like apps on your phone — VS Code is the phone,
+                    and extensions are the apps you install to do specific things.
+                    Each one installs in seconds and can be enabled or disabled
+                    at any time. The list below covers every extension currently
+                    installed in this session.
+                  </p>
+                </div>
+
+                <div class="concept-block">
+                  <p class="concept-label">How to install an extension</p>
+                  <p>
+                    Click the <strong>Extensions icon</strong> in the Activity
+                    Bar (the four squares on the left side), search for the
+                    extension name, and click <strong>Install</strong>. Or click
+                    the <em>Install in VS Code</em> link on any card below —
+                    it will open directly in the Extensions panel.
+                  </p>
+                </div>
+
+                <!-- FILTER TABS -->
+                <div class="ext-filter-tabs" role="tablist" aria-label="Filter extensions">
+                  <button class="ext-filter-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+                  <button class="ext-filter-tab" data-filter="essential" role="tab" aria-selected="false">Essential</button>
+                  <button class="ext-filter-tab" data-filter="web" role="tab" aria-selected="false">HTML &amp; Web</button>
+                  <button class="ext-filter-tab" data-filter="appearance" role="tab" aria-selected="false">Appearance</button>
+                </div>
+
+                <!-- EXTENSION GRID -->
+                <div class="ext-grid">
+
+                  <div class="ext-card" data-category="essential">
+                    <div class="ext-card-meta">
+                      <span class="ext-type ext-type--essential">Essential</span>
+                      <span class="ext-publisher">Anthropic</span>
+                    </div>
+                    <h4 class="ext-title">Claude Code</h4>
+                    <p class="ext-desc">
+                      The AI coding assistant used throughout the workshop
+                      exercises. Chat in plain English to write, explain, and fix
+                      code without needing to know all the commands yourself.
+                    </p>
+                    <a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
+                  </div>
+
+                  <div class="ext-card" data-category="essential">
+                    <div class="ext-card-meta">
+                      <span class="ext-type ext-type--essential">Essential</span>
+                      <span class="ext-publisher">Microsoft</span>
+                    </div>
+                    <h4 class="ext-title">Live Server</h4>
+                    <p class="ext-desc">
+                      Launches a local web server that auto-refreshes your
+                      browser the moment you save a file. Essential for viewing
+                      HTML pages that load data from a local JSON file.
+                    </p>
+                    <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
+                  </div>
+
+                  <div class="ext-card" data-category="essential">
+                    <div class="ext-card-meta">
+                      <span class="ext-type ext-type--essential">Essential</span>
+                      <span class="ext-publisher">Prettier</span>
+                    </div>
+                    <h4 class="ext-title">Prettier &mdash; Code Formatter</h4>
+                    <p class="ext-desc">
+                      Automatically formats your HTML, CSS, and JavaScript every
+                      time you save — consistent indentation, spacing, and
+                      structure with zero effort. Makes code much easier to read.
+                    </p>
+                    <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
+                  </div>
+
+                  <div class="ext-card" data-category="web">
+                    <div class="ext-card-meta">
+                      <span class="ext-type ext-type--web">HTML &amp; Web</span>
+                      <span class="ext-publisher">ecmel</span>
+                    </div>
+                    <h4 class="ext-title">HTML CSS Support</h4>
+                    <p class="ext-desc">
+                      Suggests CSS class names as you type inside HTML files.
+                      Prevents typos when referencing styles and speeds up
+                      writing markup considerably.
+                    </p>
+                    <a href="https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
+                  </div>
+
+                  <div class="ext-card" data-category="web">
+                    <div class="ext-card-meta">
+                      <span class="ext-type ext-type--web">HTML &amp; Web</span>
+                      <span class="ext-publisher">Microsoft</span>
+                    </div>
+                    <h4 class="ext-title">ESLint</h4>
+                    <p class="ext-desc">
+                      Highlights JavaScript errors and potential problems as you
+                      type — before you even run the code. Think of it as
+                      spell-check for your scripts.
+                    </p>
+                    <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
+                  </div>
+
+                  <div class="ext-card" data-category="web">
+                    <div class="ext-card-meta">
+                      <span class="ext-type ext-type--web">HTML &amp; Web</span>
+                      <span class="ext-publisher">xabikos</span>
+                    </div>
+                    <h4 class="ext-title">JavaScript (ES6) Snippets</h4>
+                    <p class="ext-desc">
+                      Shortcuts that expand into common JavaScript code blocks.
+                      Type a short keyword and press Tab to get a full snippet
+                      instantly — saves repetitive typing.
+                    </p>
+                    <a href="https://marketplace.visualstudio.com/items?itemName=xabikos.javascriptsnippets" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
+                  </div>
+
+                  <div class="ext-card" data-category="appearance">
+                    <div class="ext-card-meta">
+                      <span class="ext-type ext-type--appearance">Appearance</span>
+                      <span class="ext-type ext-type--optional">Optional</span>
+                      <span class="ext-publisher">GitHub</span>
+                    </div>
+                    <h4 class="ext-title">GitHub Theme</h4>
+                    <p class="ext-desc">
+                      Brings GitHub's familiar colour scheme into VS Code. A
+                      clean, professional look available in both light and dark
+                      variants — easy on the eyes during long sessions.
+                    </p>
+                    <a href="https://marketplace.visualstudio.com/items?itemName=github.github-vscode-theme" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
+                  </div>
+
+                  <div class="ext-card" data-category="appearance">
+                    <div class="ext-card-meta">
+                      <span class="ext-type ext-type--appearance">Appearance</span>
+                      <span class="ext-type ext-type--optional">Optional</span>
+                      <span class="ext-publisher">Philipp Kief</span>
+                    </div>
+                    <h4 class="ext-title">Material Icon Theme</h4>
+                    <p class="ext-desc">
+                      Replaces VS Code's default file icons with colourful,
+                      distinctive ones for every file type. Makes navigating a
+                      project with many different files much faster at a glance.
+                    </p>
+                    <a href="https://marketplace.visualstudio.com/items?itemName=pkief.material-icon-theme" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Accenture</p>
+      <p class="footer-pill">
+        Holiday fund not guaranteed &mdash; but a good PR significantly improves
+        the odds.
+      </p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="vscode.js"></script>
+  </body>
+</html>
