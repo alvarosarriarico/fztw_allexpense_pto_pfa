@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FZTW - Resources</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../styles.css" rel="stylesheet" />
+    <link href="docs.css" rel="stylesheet" />
+  </head>
+  <body class="page-docs">
+    <!-- FIXED BACKGROUND LAYERS -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-symbol">></div>
+
+    <!-- FX: SCANLINES -->
+    <div class="fx-scanlines" aria-hidden="true"></div>
+
+    <!-- FX: FILM GRAIN -->
+    <div class="fx-grain" aria-hidden="true"></div>
+
+    <header id="header">
+      <div class="header-left">
+        <span class="logo-accent">></span>
+        <div class="header-title">
+          <h1>Operation: Free Holidays</h1>
+          <div class="header-subtitle">
+            Git &middot; GitHub &middot; HTML/CSS/JS
+          </div>
+        </div>
+      </div>
+      <nav class="header-nav" aria-label="Site navigation">
+        <a href="../index.html">Home</a>
+        <a href="exercise.html">Exercise</a>
+        <a href="docs.html" class="active">Resources</a>
+      </nav>
+      <div class="header-badge">
+        <span class="live-dot"></span>
+        <span>Data &amp; AI Strategy &middot; 2026</span>
+      </div>
+    </header>
+
+    <main>
+      <!-- FX: AURORA -->
+      <div class="fx-aurora" aria-hidden="true">
+        <div class="fx-aurora-1"></div>
+        <div class="fx-aurora-2"></div>
+        <div class="fx-aurora-3"></div>
+        <div class="fx-aurora-4"></div>
+      </div>
+
+      <!-- FX: PERSPECTIVE GRID -->
+      <div class="fx-perspective-grid" aria-hidden="true"></div>
+
+      <!-- CONTENT -->
+      <div class="content-wrapper">
+        <div class="kicker">Learning resources &middot; 2026</div>
+        <h2 class="hero-title">
+          Everything you need<br />
+          <span>to go from zero to Git</span>
+        </h2>
+
+        <!-- FILTER TABS -->
+        <div class="filter-tabs" role="tablist" aria-label="Filter resources">
+          <button
+            class="filter-tab active"
+            data-filter="all"
+            role="tab"
+            aria-selected="true"
+          >All</button>
+          <button
+            class="filter-tab"
+            data-filter="official"
+            role="tab"
+            aria-selected="false"
+          >Official docs</button>
+          <button
+            class="filter-tab"
+            data-filter="free"
+            role="tab"
+            aria-selected="false"
+          >Free learning</button>
+          <button
+            class="filter-tab"
+            data-filter="video"
+            role="tab"
+            aria-selected="false"
+          >Videos</button>
+          <button
+            class="filter-tab"
+            data-filter="reference"
+            role="tab"
+            aria-selected="false"
+          >Cheat sheets</button>
+        </div>
+
+        <!-- OFFICIAL DOCS -->
+        <div class="resource-section" data-category="official">
+          <p class="resource-section-title">Official documentation</p>
+          <div class="resource-grid">
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--official">Official</span>
+                <span class="resource-platform">git-scm.com</span>
+              </div>
+              <h3 class="resource-title">Git Official Reference</h3>
+              <p class="resource-desc">
+                The complete reference for every Git command, straight from the
+                source. Useful once you know the basics and want to look up
+                specific flags or behaviours.
+              </p>
+              <a
+                href="https://git-scm.com/doc"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Open resource &rarr;</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--official">Official</span>
+                <span class="resource-platform">git-scm.com</span>
+              </div>
+              <h3 class="resource-title">Pro Git Book</h3>
+              <p class="resource-desc">
+                The de facto standard for learning Git, written by Scott Chacon
+                and Ben Straub. Available entirely free online. Start with
+                chapters 1&ndash;3 for a solid foundation.
+              </p>
+              <a
+                href="https://git-scm.com/book/en/v2"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Open resource &rarr;</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--official">Official</span>
+                <span class="resource-platform">docs.github.com</span>
+              </div>
+              <h3 class="resource-title">GitHub Documentation</h3>
+              <p class="resource-desc">
+                GitHub's own docs covering repositories, branches, pull
+                requests, Actions, and everything else on the platform.
+                Well-written and beginner-friendly.
+              </p>
+              <a
+                href="https://docs.github.com"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Open resource &rarr;</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--official">Official</span>
+                <span class="resource-platform">atlassian.com</span>
+              </div>
+              <h3 class="resource-title">Atlassian Git Tutorials</h3>
+              <p class="resource-desc">
+                Clear, visual explanations of Git concepts — branches, merging,
+                rebasing, workflows — from the team behind Bitbucket. Great for
+                beginners who learn better with diagrams.
+              </p>
+              <a
+                href="https://www.atlassian.com/git/tutorials"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Open resource &rarr;</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- FREE LEARNING -->
+        <div class="resource-section" data-category="free">
+          <p class="resource-section-title">Free learning</p>
+          <div class="resource-grid">
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--free">Free</span>
+                <span class="resource-platform">skills.github.com</span>
+              </div>
+              <h3 class="resource-title">GitHub Skills</h3>
+              <p class="resource-desc">
+                Free interactive courses that run directly inside GitHub. You
+                complete real exercises on real repositories &mdash; no sandbox,
+                no simulations. Made by GitHub themselves.
+              </p>
+              <a
+                href="https://skills.github.com"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Open resource &rarr;</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--free">Free</span>
+                <span class="resource-platform">freecodecamp.org</span>
+              </div>
+              <h3 class="resource-title">freeCodeCamp</h3>
+              <p class="resource-desc">
+                A non-profit with thousands of free coding tutorials and
+                articles. Search for &ldquo;Git&rdquo; or &ldquo;GitHub&rdquo;
+                to find step-by-step written guides alongside their YouTube
+                videos.
+              </p>
+              <a
+                href="https://www.freecodecamp.org"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Open resource &rarr;</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--free">Free</span>
+                <span class="resource-platform">theodinproject.com</span>
+              </div>
+              <h3 class="resource-title">The Odin Project</h3>
+              <p class="resource-desc">
+                A free, open-source full-stack curriculum that treats Git as a
+                first-class citizen from day one. The Git section is one of the
+                most thorough beginner resources available anywhere.
+              </p>
+              <a
+                href="https://www.theodinproject.com"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Open resource &rarr;</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- VIDEO TUTORIALS -->
+        <div class="resource-section" data-category="video">
+          <p class="resource-section-title">Video tutorials</p>
+          <div class="resource-grid">
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--video">Video</span>
+                <span class="resource-platform">YouTube &middot; freeCodeCamp</span>
+              </div>
+              <h3 class="resource-title">Git &amp; GitHub Crash Course</h3>
+              <p class="resource-desc">
+                One of the most-watched beginner Git videos available. Search
+                <strong>&ldquo;Git and GitHub for Beginners freeCodeCamp&rdquo;</strong>
+                on YouTube. Covers everything from init to pull requests in one
+                sitting.
+              </p>
+              <a
+                href="https://www.youtube.com/@freecodecamp"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Visit channel &rarr;</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--video">Video</span>
+                <span class="resource-platform">YouTube &middot; Traversy Media</span>
+              </div>
+              <h3 class="resource-title">Git &amp; GitHub for Beginners</h3>
+              <p class="resource-desc">
+                Brad Traversy's beginner Git tutorial is a community favourite.
+                Covers the core workflow in clear, no-jargon language. Search
+                <strong>&ldquo;Git GitHub Traversy&rdquo;</strong> on YouTube.
+              </p>
+              <a
+                href="https://www.youtube.com/@TraversyMedia"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Visit channel &rarr;</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--video">Video</span>
+                <span class="resource-platform">YouTube &middot; Fireship</span>
+              </div>
+              <h3 class="resource-title">Git in 100 Seconds</h3>
+              <p class="resource-desc">
+                A rapid-fire visual overview of how Git works conceptually &mdash;
+                branches, commits, merges &mdash; in under two minutes. A
+                perfect mental model before diving into longer tutorials. Search
+                <strong>&ldquo;Git in 100 seconds Fireship&rdquo;</strong> on YouTube.
+              </p>
+              <a
+                href="https://www.youtube.com/@Fireship"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Visit channel &rarr;</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- QUICK REFERENCES -->
+        <div class="resource-section" data-category="reference">
+          <p class="resource-section-title">Quick references &amp; cheat sheets</p>
+          <div class="resource-grid">
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--reference">Reference</span>
+                <span class="resource-platform">education.github.com</span>
+              </div>
+              <h3 class="resource-title">GitHub Git Cheat Sheet</h3>
+              <p class="resource-desc">
+                GitHub's official one-page PDF cheat sheet covering the most
+                common Git commands &mdash; setup, staging, branching, merging,
+                and more. Download, print, and keep it next to you.
+              </p>
+              <a
+                href="https://education.github.com/git-cheat-sheet-education.pdf"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Download PDF &rarr;</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--reference">Reference</span>
+                <span class="resource-platform">atlassian.com</span>
+              </div>
+              <h3 class="resource-title">Atlassian Git Cheat Sheet</h3>
+              <p class="resource-desc">
+                A clean, printable command reference organised by workflow stage:
+                setting up, creating snapshots, branching, and working with
+                remotes. Available as a free PDF download.
+              </p>
+              <a
+                href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Open cheat sheet &rarr;</a>
+            </div>
+
+            <div class="resource-card">
+              <div class="resource-card-meta">
+                <span class="resource-type resource-type--reference">Reference</span>
+                <span class="resource-platform">ndpsoftware.com</span>
+              </div>
+              <h3 class="resource-title">Interactive Git Cheatsheet</h3>
+              <p class="resource-desc">
+                A visual, interactive map of Git commands and how they move
+                changes between your working directory, staging area, and remote.
+                Hover over any command to see what it does and where data flows.
+              </p>
+              <a
+                href="https://ndpsoftware.com/git-cheatsheet.html"
+                target="_blank"
+                rel="noopener"
+                class="resource-link"
+              >Open interactive map &rarr;</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Accenture</p>
+      <p class="footer-pill">
+        Holiday fund not guaranteed &mdash; but a good PR significantly improves
+        the odds.
+      </p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="docs.js"></script>
+  </body>
+</html>

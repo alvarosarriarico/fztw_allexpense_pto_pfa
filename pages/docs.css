@@ -1,0 +1,202 @@
+/* DOCS PAGE LAYOUT */
+.page-docs {
+  height: auto;
+}
+.page-docs main {
+  flex: 1;
+  align-items: flex-start;
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+/* FILTER TABS */
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: fade-up 500ms ease forwards 400ms;
+}
+.filter-tab {
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 6px 16px;
+  border: 1px solid rgba(161, 0, 255, 0.18);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--acc-text-muted);
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+.filter-tab:hover {
+  border-color: var(--acc-purple);
+  color: var(--acc-purple);
+  background: rgba(161, 0, 255, 0.05);
+}
+.filter-tab.active {
+  background: var(--acc-purple);
+  color: #fff;
+  border-color: var(--acc-purple);
+  font-weight: 600;
+}
+
+/* RESOURCE SECTIONS */
+.resource-section {
+  margin-top: 36px;
+  opacity: 0;
+  animation: fade-up 500ms ease forwards 480ms;
+}
+.resource-section + .resource-section {
+  animation-delay: 560ms;
+}
+.resource-section + .resource-section + .resource-section {
+  animation-delay: 640ms;
+}
+.resource-section + .resource-section + .resource-section + .resource-section {
+  animation-delay: 720ms;
+}
+.resource-section
+  + .resource-section
+  + .resource-section
+  + .resource-section
+  + .resource-section {
+  animation-delay: 800ms;
+}
+.resource-section-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--acc-lilac);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(161, 0, 255, 0.1);
+}
+
+/* RESOURCE GRID */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 14px;
+}
+
+/* RESOURCE CARD */
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(161, 0, 255, 0.12);
+  border-radius: 18px;
+  padding: 18px 20px;
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 4px 20px rgba(161, 0, 255, 0.07),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+.resource-card:hover {
+  border-color: rgba(161, 0, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 40px rgba(161, 0, 255, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.resource-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.resource-type {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.resource-type--official {
+  background: rgba(161, 0, 255, 0.08);
+  color: var(--acc-purple-dark);
+  border: 1px solid rgba(161, 0, 255, 0.22);
+}
+.resource-type--free {
+  background: rgba(0, 168, 98, 0.08);
+  color: #005c35;
+  border: 1px solid rgba(0, 168, 98, 0.25);
+}
+.resource-type--video {
+  background: rgba(200, 40, 0, 0.07);
+  color: #820e00;
+  border: 1px solid rgba(200, 40, 0, 0.2);
+}
+.resource-type--reference {
+  background: rgba(160, 110, 0, 0.08);
+  color: #614200;
+  border: 1px solid rgba(160, 110, 0, 0.22);
+}
+.resource-platform {
+  font-size: 0.72rem;
+  color: var(--acc-text-muted);
+  opacity: 0.65;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.resource-title {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--acc-text);
+  line-height: 1.35;
+  margin: 2px 0 0;
+}
+.resource-desc {
+  font-size: 0.84rem;
+  line-height: 1.67;
+  color: var(--acc-text-muted);
+  flex: 1;
+  margin: 0;
+}
+.resource-desc strong {
+  color: var(--acc-text);
+  font-weight: 600;
+}
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--acc-purple);
+  text-decoration: none;
+  margin-top: 6px;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+.resource-link:hover {
+  gap: 8px;
+  color: var(--acc-purple-dark);
+}
+
+/* RESPONSIVE */
+@media (max-width: 720px) {
+  .page-docs main {
+    flex: 1;
+    padding-top: 28px;
+    padding-bottom: 40px;
+  }
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+  .filter-tabs {
+    gap: 6px;
+  }
+  .filter-tab {
+    font-size: 0.74rem;
+    padding: 5px 12px;
+  }
+}
