@@ -199,6 +199,51 @@
   color: var(--acc-text-muted);
 }
 
+/* EXAMPLE-OF-DELIVERABLE CALLOUT */
+.challenge-example {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  background: rgba(242, 231, 255, 0.9);
+  border: 1px solid rgba(161, 0, 255, 0.28);
+  border-radius: 14px;
+  padding: 16px 20px;
+}
+.challenge-example-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--acc-purple);
+  margin: 0;
+}
+.challenge-example-hint {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--acc-text-muted);
+  margin-left: 4px;
+}
+.challenge-example-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--acc-purple-dark);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(161, 0, 255, 0.35);
+  word-break: break-all;
+  align-self: center;
+  transition: color 0.2s, border-color 0.2s;
+}
+.challenge-example-link:hover {
+  color: var(--acc-purple);
+  border-color: var(--acc-purple);
+}
+
 /* PHASES — 4 collapsible groups, each folds open to numbered sub-steps */
 .challenge-phases {
   display: flex;
