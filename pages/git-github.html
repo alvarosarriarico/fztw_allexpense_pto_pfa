@@ -598,7 +598,7 @@
                 aria-expanded="false"
                 aria-controls="step-05-content"
               >
-                <h3>Merging Results &amp; Resolving Conflicts - Unsupervised</h3>
+                <h3>Merging: Pull &amp; Resolving Conflicts - Unsupervised</h3>
                 <span class="step-toggle-icon" aria-hidden="true">›</span>
               </button>
               <div class="step-content" id="step-05-content" role="region">
@@ -614,6 +614,19 @@
                     conflicts look like, how to fix them, and how to bring your
                     own copy of the repo up to date after others have merged.
                   </p>
+                </div>
+
+                <div class="part-hint">
+                  💡&nbsp; <strong>How this differs from Step 6.</strong>
+                  This step covers <em>direct merging</em> — you resolve any
+                  conflicts yourself and merge straight into
+                  <code class="cmd-inline">main</code> without anyone else
+                  reviewing your work first. Step 6 covers the
+                  <em>supervised</em> route: you open a Pull Request so a
+                  teammate can review and approve your changes before they
+                  land in <code class="cmd-inline">main</code>. Use this step
+                  when you have full trust and access to merge on your own;
+                  use Step 6 when your team requires a review before merging.
                 </div>
 
                 <div class="concept-block">
@@ -876,10 +889,10 @@ git merge your-branch-name</div>
                 aria-expanded="false"
                 aria-controls="step-06-content"
               >
-                <h3>Creating a Pull Request to Merge into Main - Supervised</h3>
+                <h3>Merging: Creating a Pull Request - Supervised</h3>
                 <span class="step-toggle-icon" aria-hidden="true">›</span>
               </button>
-              <div class="step-content" id="step-06-content" role="region">
+              <div class="step-content" id="step-06-content" role="region" data-filter-label-terminal="GitHub">
                 <div class="exercise-intro">
                   <p>
                     You have pushed your branch to GitHub. The next step is to
@@ -889,6 +902,19 @@ git merge your-branch-name</div>
                     if everything looks good, add them to
                     <code class="cmd-inline">main</code>."</em>
                   </p>
+                </div>
+
+                <div class="part-hint">
+                  💡&nbsp; <strong>How this differs from Step 5.</strong>
+                  Step 5 covers <em>direct merging</em> — resolving conflicts
+                  and merging into <code class="cmd-inline">main</code>
+                  yourself, with no one else in the loop. This step is the
+                  <em>supervised</em> route: you open a Pull Request on GitHub
+                  so a teammate can read your changes, leave comments, and
+                  approve before anything reaches
+                  <code class="cmd-inline">main</code>. Use this step whenever
+                  your team has a review process in place or when you want a
+                  second pair of eyes before merging.
                 </div>
 
                 <div class="concept-block">
@@ -918,6 +944,11 @@ git merge your-branch-name</div>
                 <p class="method-step">
                   When your branch is pushed and your changes are committed,
                   create the pull request.                </p>
+
+                <!-- OPENING THE PR -->
+                <p class="method-section-title">
+                  Part 1 &mdash; Open the pull request
+                </p>
 
                 <div class="method-block">
                   <div class="method-header">
@@ -983,17 +1014,114 @@ git merge your-branch-name</div>
                       click <strong>Create pull request</strong>.
                     </p>
                     <p class="cmd-explain">
-                      Your PR is now open. The repo owner will receive a
-                      notification, review your changes, and either approve and
-                      merge, or leave comments asking for adjustments.
+                      Your PR is now open. The reviewer will receive a
+                      notification and can start looking at your changes.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- REVIEW AND FEEDBACK -->
+                <p class="method-section-title">
+                  Part 2 &mdash; The review: what happens and how to respond
+                </p>
+                <p class="method-step">
+                  Once the PR is open, the reviewer reads your changes on
+                  GitHub. GitHub shows a colour-coded view of exactly what you
+                  added (green) and removed (red) — no technical knowledge
+                  needed to read it. There are two possible outcomes:
+                </p>
+
+                <div class="part-hint">
+                  💡&nbsp; <strong>Agree on a designated reviewer as a team.</strong>
+                  On a standard GitHub account, any collaborator with write
+                  access can technically merge a pull request — there is no
+                  system-enforced reviewer. To avoid confusion (or accidental
+                  merges), agree upfront on who is responsible for reviewing
+                  and approving PRs. In most small teams this is the repo
+                  owner or a single nominated person, but what matters is that
+                  everyone knows who to ping when a PR is ready.
+                </div>
+
+                <div class="concept-block">
+                  <p class="concept-label">Outcome A — Changes are requested</p>
+                  <p>
+                    The reviewer leaves comments on specific lines asking you
+                    to adjust something. You will receive an email notification.
+                    To respond: make the edits on your computer, commit them,
+                    and push. The PR on GitHub updates automatically — you do
+                    not need to open a new one. Once you have addressed the
+                    feedback, let the reviewer know so they can take another
+                    look.
+                  </p>
+                </div>
+
+                <div class="concept-block concept-block--highlight">
+                  <p class="concept-label">Outcome B — Approved and merged</p>
+                  <p>
+                    The reviewer is happy with your changes and clicks
+                    <strong>Merge pull request</strong> on GitHub. Your work is
+                    now officially part of <code class="cmd-inline">main</code>
+                    and visible to everyone. GitHub will offer to delete your
+                    branch — it is safe to do so, since everything is now in
+                    <code class="cmd-inline">main</code>.
+                  </p>
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    Using Claude Code
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      <strong>If changes were requested:</strong> make the
+                      edits, then ask Claude Code to commit and push them:
+                    </p>
+                    <div class="cmd-block">"Commit my latest changes and push them to GitHub"</div>
+                    <p class="cmd-explain">
+                      The PR updates automatically. Claude Code can also help
+                      you understand a reviewer's comment if the wording is
+                      unclear — just paste the comment in and ask what it means.
+                    </p>
+                    <p class="method-step">
+                      <strong>If the PR was approved</strong> and you have
+                      permission to merge, ask Claude Code to complete it:
+                    </p>
+                    <div class="cmd-block">"Merge the pull request on GitHub"</div>
+                    <p class="cmd-explain">
+                      Claude Code will merge the PR on GitHub and confirm that
+                      your branch has been incorporated into
+                      <code class="cmd-inline">main</code>.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    Using GitHub directly
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      <strong>If changes were requested:</strong> make the
+                      edits on your computer, commit, and push as normal. Then
+                      come back to the PR page on GitHub — you will see the new
+                      commits have appeared automatically. You can reply to the
+                      reviewer's comments to let them know you have addressed
+                      the feedback.
+                    </p>
+                    <p class="method-step">
+                      <strong>If the PR is approved:</strong> the reviewer (or
+                      you, if you have permission) clicks
+                      <strong>Merge pull request</strong> on the PR page,
+                      followed by <strong>Confirm merge</strong>. That is it —
+                      your work is now part of
+                      <code class="cmd-inline">main</code>.
                     </p>
                     <div class="part-hint">
-                      💡&nbsp; <strong>After it is merged:</strong> GitHub will
-                      show a <strong>Merge pull request</strong> button (visible
-                      to the repo owner). Once clicked, your work is officially
-                      part of <code class="cmd-inline">main</code> — this is
-                      the goal! You can then delete your branch on GitHub to
-                      keep things tidy; it is no longer needed.
+                      💡&nbsp; After merging, GitHub shows a
+                      <strong>Delete branch</strong> button on the PR page.
+                      Clicking it keeps the repository tidy — the branch is no
+                      longer needed since everything is safely in
+                      <code class="cmd-inline">main</code>.
                     </div>
                   </div>
                 </div>
@@ -1202,6 +1330,163 @@ git merge your-branch-name</div>
                   </div>
                 </div>
 
+                <!-- SECTION 2: REMOTE REVERTS -->
+                <p class="method-section-title">
+                  Section 2 &mdash; Reverting changes already on GitHub
+                </p>
+                <p class="method-step">
+                  The scenarios above undo changes that exist only on your
+                  computer. But what if you have already pushed a commit to
+                  GitHub? The commit now lives both locally and on the remote
+                  branch. To undo it properly you need to do two things:
+                  create the revert commit locally (as in Section 1), then
+                  push that revert to GitHub so the remote branch reflects the
+                  change too.
+                </p>
+
+                <div class="concept-block">
+                  <p class="concept-label">Local vs remote: what is the difference?</p>
+                  <p>
+                    A <strong>local revert</strong> only changes your copy on
+                    your computer — GitHub and your teammates are unaffected
+                    until you push. A <strong>remote revert</strong> pushes
+                    the undo commit to GitHub, so the branch on the server is
+                    also rolled back. Anyone who pulls after that point will
+                    get the reverted version.
+                  </p>
+                </div>
+
+                <div class="concept-block concept-block--highlight">
+                  <p class="concept-label">Extra care when reverting on main</p>
+                  <p>
+                    Reverting a commit on your own personal branch affects
+                    only you until you merge. Reverting on
+                    <code class="cmd-inline">main</code> affects the whole
+                    team — the moment you push, everyone who pulls will see
+                    the change. Always let your teammates know before
+                    reverting something on a shared branch so nobody is
+                    caught off guard by content unexpectedly disappearing.
+                  </p>
+                </div>
+
+                <!-- SCENARIO 3 -->
+                <p class="method-section-title">
+                  Scenario 3 &mdash; Undo a commit pushed to your own branch
+                </p>
+                <p class="method-step">
+                  You pushed a commit to your branch on GitHub and now want
+                  to undo it. Same as Scenario 2, with one extra step: push
+                  the revert so GitHub matches your local state.
+                </p>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    Using Claude Code
+                  </div>
+                  <div class="method-body">
+                    <div class="cmd-block">"Revert the commit with the message '[the commit message you want to undo]' and push the result to GitHub"</div>
+                    <p class="cmd-explain">
+                      Claude Code creates the revert commit locally and pushes
+                      it to your branch on GitHub in one go. The history on
+                      GitHub will show the original commit followed by a new
+                      "Revert" entry — nothing is deleted.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    Using PowerShell + Git
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      <strong>1.</strong> Find the commit ID:
+                    </p>
+                    <div class="cmd-block">git log --oneline</div>
+                    <p class="method-step">
+                      <strong>2.</strong> Create the revert commit:
+                    </p>
+                    <div class="cmd-block">git revert a3f9d12</div>
+                    <p class="method-step">
+                      <strong>3.</strong> Push it to GitHub:
+                    </p>
+                    <div class="cmd-block">git push</div>
+                    <p class="cmd-explain">
+                      GitHub now reflects the revert. Anyone viewing your
+                      branch will see the original commit and the revert
+                      sitting next to each other in the history.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- SCENARIO 4 -->
+                <p class="method-section-title">
+                  Scenario 4 &mdash; Undo a commit merged into main
+                </p>
+                <p class="method-step">
+                  Something already merged into
+                  <code class="cmd-inline">main</code> needs to be undone.
+                  Communicate with your team before pushing — the revert will
+                  immediately affect everyone who pulls from
+                  <code class="cmd-inline">main</code>.
+                </p>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    Using Claude Code
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      <strong>1.</strong> Switch to main and pull the latest:
+                    </p>
+                    <div class="cmd-block">"Switch to the main branch and pull the latest changes from GitHub"</div>
+                    <p class="method-step">
+                      <strong>2.</strong> Revert the commit and push:
+                    </p>
+                    <div class="cmd-block">"Revert the commit with the message '[the commit message you want to undo]' and push to GitHub"</div>
+                    <p class="cmd-explain">
+                      Claude Code creates the revert commit on
+                      <code class="cmd-inline">main</code> and pushes it.
+                      The change is immediately live on GitHub.
+                    </p>
+                    <div class="part-hint">
+                      💡&nbsp; Remember to switch back to your working branch
+                      when done: <em>"Switch back to my working branch"</em>.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="method-block">
+                  <div class="method-header">
+                    Using PowerShell + Git
+                  </div>
+                  <div class="method-body">
+                    <p class="method-step">
+                      <strong>1.</strong> Switch to main and pull the latest:
+                    </p>
+                    <div class="cmd-block">git checkout main
+git pull</div>
+                    <p class="method-step">
+                      <strong>2.</strong> Find and revert the commit:
+                    </p>
+                    <div class="cmd-block">git log --oneline</div>
+                    <div class="cmd-block">git revert a3f9d12</div>
+                    <p class="method-step">
+                      <strong>3.</strong> Push the revert to GitHub:
+                    </p>
+                    <div class="cmd-block">git push</div>
+                    <p class="cmd-explain">
+                      The revert is now live on
+                      <code class="cmd-inline">main</code> on GitHub. Anyone
+                      pulling after this point will get the reverted state.
+                    </p>
+                    <div class="part-hint">
+                      💡&nbsp; Switch back to your own branch when done:
+                      <code class="cmd-inline">git checkout your-branch-name</code>.
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -1214,183 +1499,10 @@ git merge your-branch-name</div>
                 aria-expanded="false"
                 aria-controls="step-08-content"
               >
-                <h3>Keeping Secrets Off GitHub &mdash; Local Data Files</h3>
-                <span class="step-toggle-icon" aria-hidden="true">›</span>
-              </button>
-              <div class="step-content" id="step-08-content" role="region">
-                <div class="exercise-intro">
-                  <p>
-                    Your HTML page will eventually contain real information —
-                    team names, budget figures, internal references, or anything
-                    else you would rather keep private. Putting all of that
-                    directly into <code class="cmd-inline">index.html</code>
-                    means it gets uploaded to GitHub every time you commit.
-                    This section explains how to separate what is
-                    <strong>safe to share</strong> (the page design and
-                    structure) from what is <strong>private</strong> (the actual
-                    data), and how to make Git ignore your private files
-                    completely.
-                  </p>
-                </div>
-
-                <!-- CONCEPTS -->
-                <div class="concept-block">
-                  <p class="concept-label">The template idea</p>
-                  <p>
-                    Think of a form letter. The letter itself — its layout,
-                    font, and wording — is the template. The recipient's name
-                    and address are the data, and they change for every copy.
-                    Your HTML page works the same way: the design and structure
-                    (the template) lives on GitHub and is safe to share. The
-                    real values — names, numbers, sensitive details — live in a
-                    separate file on your computer and never leave it.
-                  </p>
-                </div>
-
-                <div class="concept-block">
-                  <p class="concept-label">What is a JSON file?</p>
-                  <p>
-                    A JSON file is a plain text file that stores information
-                    with labels. Think of it like a two-column table — on the
-                    left is the label, on the right is the value. For example:
-                  </p>
-                  <div class="cmd-block" style="margin-top: 10px; white-space: pre;">&#123;
-  "teamName": "Data &amp; AI Strategy",
-  "projectName": "From Zero to Workflow",
-  "contactEmail": "team@accenture.com"
-&#125;</div>
-                  <p style="margin-top: 8px; font-size: 0.84rem; color: var(--acc-text-muted); line-height: 1.65;">
-                    Your HTML page can read this file automatically and display
-                    those values wherever you tell it to. You update the file,
-                    the page updates. The file never gets uploaded to GitHub.
-                  </p>
-                </div>
-
-                <div class="concept-block concept-block--highlight">
-                  <p class="concept-label">The pattern to follow</p>
-                  <ul class="tips-list">
-                    <li>
-                      <strong>index.html</strong> — your template. Contains the
-                      design, structure, and placeholder elements. Committed to
-                      GitHub. Safe to share.
-                    </li>
-                    <li>
-                      <strong>team-data.json</strong> — your private data file.
-                      Contains real names, figures, and sensitive details. Lives
-                      only on your computer. Never committed to GitHub.
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="concept-block">
-                  <p class="concept-label">What is .gitignore?</p>
-                  <p>
-                    A <code class="cmd-inline">.gitignore</code> file is a
-                    simple text file that acts as a blocklist for Git. Any
-                    filename you write inside it becomes completely invisible to
-                    Git — it will never be staged, committed, or uploaded to
-                    GitHub, no matter how many times you run
-                    <code class="cmd-inline">git add</code>. The file continues
-                    to exist and work perfectly on your computer; Git simply
-                    pretends it does not exist.
-                  </p>
-                  <p style="margin-top: 8px; font-size: 0.84rem; color: var(--acc-text-muted); line-height: 1.65;">
-                    Think of it like a "do not pack" list before a trip. You
-                    write down what you want to leave at home, and from that
-                    point on those items never make it into the suitcase —
-                    regardless of who is doing the packing. Your
-                    <code class="cmd-inline">team-data.json</code> goes on that
-                    list, and GitHub never sees it.
-                  </p>
-                </div>
-
-                <!-- HOW TO DO IT -->
-                <p class="method-section-title">
-                  Setting it up &mdash; Using Claude Code
-                </p>
-                <p class="method-step">
-                  Follow these steps in order. Each prompt builds on the
-                  previous one, so complete them as a sequence inside the same
-                  Claude Code session.
-                </p>
-
-                <div class="method-block">
-                  <div class="method-header">
-                    <span class="method-tag">Step 1</span>
-                    Create your private data file
-                  </div>
-                  <div class="method-body">
-                    <p class="method-step">
-                      Ask Claude Code to create the JSON file with your real
-                      data. Describe the information you want to store:
-                    </p>
-                    <div class="cmd-block">
-                      "Create a file called team-data.json with the following
-                      information: team name is '[your team name]', project name
-                      is '[your project name]', and team members are '[name 1]',
-                      '[name 2]', '[name 3]'"
-                    </div>
-                    <p class="cmd-explain">
-                      Claude Code will create the file in the correct format.
-                      This file stays on your computer only — it is not
-                      uploaded to GitHub.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="method-block">
-                  <div class="method-header">
-                    <span class="method-tag">Step 2</span>
-                    Update your HTML to read from the file
-                  </div>
-                  <div class="method-body">
-                    <p class="method-step">
-                      Ask Claude Code to turn your HTML into a template that
-                      loads its content from the JSON file:
-                    </p>
-                    <div class="cmd-block">
-                      "Update index.html so that it reads team name, project
-                      name, and team members from team-data.json and displays
-                      them in the page. Where those values currently appear as
-                      plain text, replace them with placeholders that get filled
-                      in automatically when the page loads"
-                    </div>
-                    <p class="cmd-explain">
-                      Claude Code will add a small helper to the page that reads
-                      your data file when the page opens and fills in the right
-                      spots automatically. Your HTML becomes the blank form; the
-                      JSON file fills it in.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="part-hint">
-                  💡&nbsp; <strong>Opening the page correctly.</strong> For the
-                  page to read your data file, it needs to be launched through
-                  VS Code's <strong>Live Server</strong> — not by double-clicking
-                  the HTML file. Install the Live Server extension (see the VS
-                  Code page), then click <strong>Go Live</strong> at the bottom
-                  of VS Code. Ask Claude Code to help if needed:
-                  <em>"Help me open this project with Live Server so the data
-                  file loads correctly"</em>.
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="step-card collapsible" id="step-09">
-            <div class="step-number">09</div>
-            <div class="step-body">
-              <button
-                class="step-toggle"
-                aria-expanded="false"
-                aria-controls="step-09-content"
-              >
                 <h3>Publishing Your Project with GitHub Pages</h3>
                 <span class="step-toggle-icon" aria-hidden="true">›</span>
               </button>
-              <div class="step-content" id="step-09-content" role="region">
+              <div class="step-content" id="step-08-content" role="region">
                 <div class="exercise-intro">
                   <p>
                     Once your work is merged into
@@ -1418,6 +1530,48 @@ git merge your-branch-name</div>
                     There is nothing to install or deploy manually — every
                     time you push to the branch GitHub Pages is watching, the
                     site updates automatically within a minute or two.
+                  </p>
+                </div>
+
+                <div class="concept-block">
+                  <p class="concept-label">What GitHub Pages can and cannot do</p>
+                  <p>
+                    GitHub Pages is a <strong>static file host</strong> — it
+                    takes your files and delivers them to a browser exactly as
+                    they are, with no processing in between. Think of it as a
+                    digital photocopier: it can hand out printed copies of a
+                    recipe, but it cannot cook the food.
+                  </p>
+                  <ul class="tips-list" style="margin-top: 10px;">
+                    <li>
+                      <strong>Works:</strong> HTML pages, CSS styling,
+                      JavaScript, images, fonts, PDFs — anything a browser
+                      can run or display on its own without needing a server.
+                    </li>
+                    <li>
+                      <strong>Does not work:</strong> server-side code (PHP,
+                      Python, Node.js), databases, form submissions that save
+                      data, password-protected pages, or anything that
+                      requires a program running in the background to handle
+                      requests.
+                    </li>
+                    <li>
+                      <strong>No local data files:</strong> if your page loads
+                      a <code class="cmd-inline">team-data.json</code> that
+                      you have kept off GitHub, that file will
+                      <em>not</em> be available on the live site — it only
+                      exists on your computer. You would need to include a
+                      safe, public version of the data in the repository, or
+                      hard-code the values directly into the HTML before
+                      publishing.
+                    </li>
+                  </ul>
+                  <p style="margin-top: 10px; font-size: 0.84rem; color: var(--acc-text-muted); line-height: 1.65;">
+                    For this project, GitHub Pages is a great fit — a static
+                    HTML page with CSS and JavaScript is exactly what it is
+                    designed to serve. If your project ever grows to need user
+                    logins, form submissions, or live data from a database,
+                    you would need a different hosting solution.
                   </p>
                 </div>
 

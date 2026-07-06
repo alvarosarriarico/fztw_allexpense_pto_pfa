@@ -16,9 +16,6 @@ document.querySelectorAll(".method-block").forEach((block) => {
     block.dataset.method = "claude";
   } else if (text.includes("PowerShell") || text.includes("GitHub directly")) {
     block.dataset.method = "terminal";
-  } else if (block.closest("#step-08")) {
-    // step-08 is Claude Code only — no terminal equivalent
-    block.dataset.method = "claude";
   }
 });
 
@@ -26,11 +23,12 @@ document.querySelectorAll(".method-block").forEach((block) => {
 document.querySelectorAll(".step-content").forEach((content) => {
   if (!content.querySelector(".method-block[data-method]")) return;
 
+  const terminalLabel = content.dataset.filterLabelTerminal || "Terminal";
   const filter = document.createElement("div");
   filter.className = "method-filter";
   filter.innerHTML =
     '<button class="method-filter-btn active" data-filter="claude" aria-pressed="true">Claude Code</button>' +
-    '<button class="method-filter-btn" data-filter="terminal" aria-pressed="false">Terminal</button>';
+    `<button class="method-filter-btn" data-filter="terminal" aria-pressed="false">${terminalLabel}</button>`;
 
   const notice = document.createElement("div");
   notice.className = "method-filter-notice";
