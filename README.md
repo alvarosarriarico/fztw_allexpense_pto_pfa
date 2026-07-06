@@ -1,4 +1,4 @@
-# From Zero to WoW
+# From Zero to WoW - Collaborative Development
 
 > A beginner-friendly wiki for the **Data & AI Strategy** team at Accenture — covering Git, GitHub, and VS Code from first principles.
 
