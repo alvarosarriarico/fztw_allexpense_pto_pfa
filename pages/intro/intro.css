@@ -1,3 +1,9 @@
+/* PAGE-LOCAL COLOURS */
+:root {
+  --push-blue: #0070f3;
+  --push-blue-dark: #004bb5;
+}
+
 /* INTRO PAGE LAYOUT */
 .page-intro {
   height: auto;
@@ -63,12 +69,25 @@
 
 /* CONCEPT CARDS */
 .concept-cards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
   margin-top: 16px;
   opacity: 0;
   animation: fade-up 500ms ease forwards 480ms;
+}
+
+/* WORKFLOW GROUP — wraps the diagram + Push/Pull cards as one unit */
+.workflow-group {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 6px 18px 18px;
+  border: 1.5px solid rgba(161, 0, 255, 0.22);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 24px rgba(161, 0, 255, 0.06);
 }
 .concept-card {
   position: relative;
@@ -91,12 +110,23 @@
     0 4px 10px rgba(0, 0, 0, 0.06);
 }
 .concept-card--repo {
+  grid-column: 1 / -1;
   border-left: 3px solid var(--acc-purple);
 }
 .concept-card--pull {
-  border-left: 3px solid var(--success-green);
+  border: 2px solid var(--success-green);
+}
+.concept-card--pull:hover {
+  border-color: var(--success-green);
 }
 .concept-card--push {
+  border: 2px solid var(--push-blue);
+}
+.concept-card--push:hover {
+  border-color: var(--push-blue);
+}
+.concept-card--branch {
+  grid-column: 1 / -1;
   border-left: 3px solid var(--acc-lilac);
 }
 
@@ -126,8 +156,8 @@
   border: 1px solid rgba(0, 168, 98, 0.28);
 }
 .concept-card--push .concept-icon {
-  background: rgba(136, 0, 221, 0.09);
-  border: 1px solid rgba(136, 0, 221, 0.24);
+  background: rgba(0, 112, 243, 0.09);
+  border: 1px solid rgba(0, 112, 243, 0.28);
 }
 .concept-title {
   font-size: 1.15rem;
@@ -156,9 +186,9 @@
   border: 1px solid rgba(0, 168, 98, 0.28);
 }
 .concept-card--push .concept-tag {
-  background: rgba(136, 0, 221, 0.08);
-  color: var(--acc-lilac-soft);
-  border: 1px solid rgba(136, 0, 221, 0.24);
+  background: rgba(0, 112, 243, 0.08);
+  color: var(--push-blue-dark);
+  border: 1px solid rgba(0, 112, 243, 0.28);
 }
 
 /* CONCEPT BODY */
@@ -220,11 +250,6 @@
   background: rgba(0, 168, 98, 0.08);
   color: #005c35;
 }
-.flow-node--lilac {
-  border-color: var(--acc-lilac);
-  background: rgba(136, 0, 221, 0.08);
-  color: var(--acc-lilac-soft);
-}
 .flow-arrow {
   display: flex;
   flex-direction: column;
@@ -243,41 +268,24 @@
 .flow-arrow--lilac .fa-label {
   color: var(--acc-lilac);
 }
+.flow-arrow--blue .fa-label {
+  color: var(--push-blue);
+}
 .chevron-arrow {
   display: block;
   overflow: visible;
 }
 
-/* REPOSITORY FILE GRID */
-.file-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  background: rgba(161, 0, 255, 0.04);
-  border: 1px solid rgba(161, 0, 255, 0.1);
-  border-radius: 14px;
-  padding: 16px;
-  margin: 16px 0;
-}
-.file-chip {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(161, 0, 255, 0.12);
-  border-radius: 999px;
-  padding: 7px 10px;
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--acc-text-muted);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-.file-chip--hub {
-  border-color: var(--acc-purple);
-  background: rgba(161, 0, 255, 0.08);
-  color: var(--acc-purple-dark);
-  font-weight: 600;
+/* UNIFIED PUSH / PULL FLOW — spans both columns, sits above the pair */
+.flow--unified {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 6px 8px 20px;
+  gap: 14px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(161, 0, 255, 0.14);
+  border-radius: 0;
 }
 
 /* TAKEAWAY */
@@ -299,12 +307,95 @@
   border: 1px solid rgba(0, 168, 98, 0.2);
 }
 .concept-card--push .takeaway {
+  background: rgba(0, 112, 243, 0.05);
+  color: var(--push-blue-dark);
+  border: 1px solid rgba(0, 112, 243, 0.2);
+}
+.takeaway strong {
+  font-weight: 600;
+}
+
+/* GIT NOTE — a technical aside, styled apart from the concept takeaways */
+.git-note {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(18, 0, 32, 0.04);
+  border: 1px dashed rgba(116, 0, 184, 0.4);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--acc-text-muted);
+}
+.git-note-tag {
+  flex-shrink: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: var(--acc-purple-dark);
+  border-radius: 5px;
+  padding: 3px 8px;
+  margin-top: 1px;
+}
+.git-note p {
+  margin: 0;
+}
+.git-note strong {
+  color: var(--acc-purple-dark);
+  font-weight: 600;
+}
+
+/* BRANCH SECTION */
+.concept-card--branch .concept-icon {
+  background: rgba(136, 0, 221, 0.09);
+  border: 1px solid rgba(136, 0, 221, 0.24);
+}
+.concept-card--branch .concept-tag {
+  background: rgba(136, 0, 221, 0.08);
+  color: var(--acc-lilac-soft);
+  border: 1px solid rgba(136, 0, 221, 0.24);
+}
+.concept-card--branch .takeaway {
   background: rgba(136, 0, 221, 0.05);
   color: var(--acc-lilac-soft);
   border: 1px solid rgba(136, 0, 221, 0.18);
 }
-.takeaway strong {
-  font-weight: 600;
+.branch-flow {
+  gap: 4px;
+  align-items: center;
+}
+.branch-copies {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 172px;
+}
+.branch-copies .flow-node {
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.branch-fork {
+  display: block;
+  flex-shrink: 0;
+}
+.fork-text {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  fill: var(--acc-lilac);
+}
+.flow-node--ghost {
+  border: 1.5px dashed #b3aec0;
+  background: rgba(255, 255, 255, 0.45);
+  color: var(--acc-text-muted);
 }
 
 /* SUMMARY TABLE */
@@ -372,10 +463,10 @@
   color: #005c35;
   border: 1px solid rgba(0, 168, 98, 0.28);
 }
-.chip--lilac {
-  background: rgba(136, 0, 221, 0.08);
-  color: var(--acc-lilac-soft);
-  border: 1px solid rgba(136, 0, 221, 0.24);
+.chip--blue {
+  background: rgba(0, 112, 243, 0.08);
+  color: var(--push-blue-dark);
+  border: 1px solid rgba(0, 112, 243, 0.28);
 }
 
 /* WORKFLOW NOTE */
@@ -403,11 +494,19 @@
     padding-top: 28px;
     padding-bottom: 40px;
   }
+  .concept-cards {
+    grid-template-columns: 1fr;
+  }
+  .workflow-group {
+    grid-template-columns: 1fr;
+  }
   .flow {
     flex-direction: column;
   }
-  .file-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .branch-flow {
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: flex-start;
   }
   .sum-table th:nth-child(4),
   .sum-table td:nth-child(4) {

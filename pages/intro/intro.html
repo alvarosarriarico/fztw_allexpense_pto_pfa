@@ -111,64 +111,50 @@
               </p>
             </div>
 
-            <div class="file-grid">
-              <div class="file-chip file-chip--hub">📁 Repository</div>
-              <div class="file-chip">📄 index.html</div>
-              <div class="file-chip">🎨 styles.css</div>
-              <div class="file-chip">🖼️ logo.png</div>
-              <div class="file-chip">📝 README.md</div>
-              <div class="file-chip">🕰️ Full history</div>
-            </div>
-
             <div class="takeaway">
               <strong>Plain terms:</strong> the repo is the single
               authoritative place where the project lives &mdash; the master
               binder everyone refers to.
             </div>
+
+            <div class="git-note">
+              <span class="git-note-tag">git</span>
+              <p>
+                <strong>Where Git fits in:</strong> Git is simply a program
+                that tracks your files &mdash; it keeps a record of every
+                change and always knows what the latest version of each file,
+                and of the repository as a whole, looks like.
+              </p>
+            </div>
           </div>
 
-          <!-- PULL -->
-          <div class="concept-card concept-card--pull">
-            <div class="concept-header">
-              <div class="concept-icon" aria-hidden="true">⬇️</div>
-              <div>
-                <div class="concept-title">Pull</div>
-                <span class="concept-tag">Getting the latest version</span>
-              </div>
-            </div>
-            <div class="concept-body">
-              <p>
-                <strong>Pulling</strong> means downloading the most up-to-date
-                version of the project from the repository onto your computer.
-                You do this so you&rsquo;re always working with the latest
-                changes &mdash; including anything teammates have added.
-              </p>
-              <p>
-                Like walking to the office cabinet, grabbing a fresh copy of the
-                document, and bringing it back to your desk.
-              </p>
-            </div>
+          <!-- WORKFLOW GROUP: the diagram and the two cards it describes -->
+          <div class="workflow-group">
 
-            <div class="flow">
-              <div class="flow-node flow-node--green">
-                🗄️ Repository<small>latest version</small>
-              </div>
-              <div class="flow-arrow flow-arrow--green">
-                <svg class="chevron-arrow" width="52" height="18" viewBox="0 0 52 18" aria-hidden="true">
-                  <line x1="2" y1="9" x2="42" y2="9" stroke="#00a862" stroke-width="2.5" stroke-linecap="round" />
-                  <polyline points="36,3 44,9 36,15" fill="none" stroke="#00a862" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <span class="fa-label">PULL</span>
-              </div>
-              <div class="flow-node">
-                💻 Your computer<small>your local copy</small>
-              </div>
+          <!-- UNIFIED PUSH / PULL FLOW (spans both columns) -->
+          <div class="flow flow--unified">
+            <div class="flow-node">
+              💻 Your computer<small>with your changes</small>
             </div>
-
-            <div class="takeaway">
-              <strong>Plain terms:</strong> Pull = &ldquo;give me the newest
-              version.&rdquo; Always pull before starting work to stay in sync
-              with your team.
+            <div class="flow-arrow flow-arrow--blue">
+              <svg class="chevron-arrow" width="52" height="18" viewBox="0 0 52 18" aria-hidden="true">
+                <line x1="2" y1="9" x2="42" y2="9" stroke="#0070f3" stroke-width="2.5" stroke-linecap="round" />
+                <polyline points="36,3 44,9 36,15" fill="none" stroke="#0070f3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="fa-label">PUSH</span>
+            </div>
+            <div class="flow-node flow-node--purple">
+              🗄️ Repository<small>the shared hub</small>
+            </div>
+            <div class="flow-arrow flow-arrow--green">
+              <svg class="chevron-arrow" width="52" height="18" viewBox="0 0 52 18" aria-hidden="true">
+                <line x1="2" y1="9" x2="42" y2="9" stroke="#00a862" stroke-width="2.5" stroke-linecap="round" />
+                <polyline points="36,3 44,9 36,15" fill="none" stroke="#00a862" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="fa-label">PULL</span>
+            </div>
+            <div class="flow-node">
+              💻 Your computer<small>your local copy</small>
             </div>
           </div>
 
@@ -194,22 +180,6 @@
               </p>
             </div>
 
-            <div class="flow">
-              <div class="flow-node">
-                💻 Your computer<small>with your changes</small>
-              </div>
-              <div class="flow-arrow flow-arrow--lilac">
-                <svg class="chevron-arrow" width="52" height="18" viewBox="0 0 52 18" aria-hidden="true">
-                  <line x1="2" y1="9" x2="42" y2="9" stroke="#8800dd" stroke-width="2.5" stroke-linecap="round" />
-                  <polyline points="36,3 44,9 36,15" fill="none" stroke="#8800dd" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <span class="fa-label">PUSH</span>
-              </div>
-              <div class="flow-node flow-node--lilac">
-                🗄️ Repository<small>updated for all</small>
-              </div>
-            </div>
-
             <div class="takeaway">
               <strong>Plain terms:</strong> Push = &ldquo;here are my changes,
               share them with everyone.&rdquo; It&rsquo;s how your work becomes
@@ -217,6 +187,113 @@
             </div>
           </div>
 
+          <!-- PULL -->
+          <div class="concept-card concept-card--pull">
+            <div class="concept-header">
+              <div class="concept-icon" aria-hidden="true">⬇️</div>
+              <div>
+                <div class="concept-title">Pull</div>
+                <span class="concept-tag">Getting the latest version</span>
+              </div>
+            </div>
+            <div class="concept-body">
+              <p>
+                <strong>Pulling</strong> means downloading the most up-to-date
+                version of the project from the repository onto your computer.
+                You do this so you&rsquo;re always working with the latest
+                changes &mdash; including anything teammates have added.
+              </p>
+              <p>
+                Like walking to the office cabinet, grabbing a fresh copy of the
+                document, and bringing it back to your desk.
+              </p>
+            </div>
+
+            <div class="takeaway">
+              <strong>Plain terms:</strong> Pull = &ldquo;give me the newest
+              version.&rdquo; Always pull before starting work to stay in sync
+              with your team.
+            </div>
+          </div>
+
+          </div>
+
+          <!-- BRANCHES -->
+          <div class="concept-card concept-card--branch">
+            <div class="concept-header">
+              <div class="concept-icon" aria-hidden="true">🌿</div>
+              <div>
+                <div class="concept-title">Branches</div>
+                <span class="concept-tag">Working in parallel</span>
+              </div>
+            </div>
+            <div class="concept-body">
+              <p>
+                There is one <strong>main repository</strong> &mdash; the shared
+                filing cabinet everyone works from. When two of us want to work
+                at the same time, we each create a <strong>branch</strong>: our
+                own copy taken home to our computer, so we can make changes
+                without disturbing anyone else&rsquo;s work.
+              </p>
+              <p>
+                When we have each finished, we bring our copies back and
+                <strong>merge</strong> them into the main cabinet together
+                &mdash; combining everyone&rsquo;s work into one shared version.
+              </p>
+            </div>
+
+            <div class="flow branch-flow">
+              <div class="flow-node flow-node--purple">
+                🗄️ main repo<small>the shared cabinet</small>
+              </div>
+
+              <!-- LEFT FORK: pull a copy (green) · main line continues (grey) -->
+              <svg class="branch-fork" width="84" height="172" viewBox="0 0 84 172" aria-hidden="true">
+                <defs>
+                  <marker id="ah-purple" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+                    <path d="M1,1 L7,4.5 L1,8" fill="none" stroke="#8800dd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </marker>
+                  <marker id="ah-grey" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+                    <path d="M1,1 L7,4.5 L1,8" fill="none" stroke="#b3aec0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </marker>
+                </defs>
+                <text x="44" y="13" class="fork-text" text-anchor="middle">BRANCH</text>
+                <line x1="4" y1="86" x2="76" y2="24" stroke="#8800dd" stroke-width="2" stroke-linecap="round" marker-end="url(#ah-purple)" />
+                <line x1="4" y1="86" x2="76" y2="86" stroke="#b3aec0" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round" marker-end="url(#ah-grey)" />
+                <line x1="4" y1="86" x2="76" y2="148" stroke="#8800dd" stroke-width="2" stroke-linecap="round" marker-end="url(#ah-purple)" />
+              </svg>
+
+              <div class="branch-copies">
+                <div class="flow-node">
+                  🌿 Ana&rsquo;s branch<small>her copy at home</small>
+                </div>
+                <div class="flow-node flow-node--ghost">
+                  🗄️ main branch<small>still here, untouched</small>
+                </div>
+                <div class="flow-node">
+                  🌿 &Aacute;lvaro&rsquo;s branch<small>his copy at home</small>
+                </div>
+              </div>
+
+              <!-- RIGHT FORK: push work back / merge (blue) · main line continues (grey) -->
+              <svg class="branch-fork" width="84" height="172" viewBox="0 0 84 172" aria-hidden="true">
+                <text x="40" y="13" class="fork-text" text-anchor="middle">MERGE</text>
+                <line x1="8" y1="24" x2="80" y2="86" stroke="#8800dd" stroke-width="2" stroke-linecap="round" marker-end="url(#ah-purple)" />
+                <line x1="8" y1="86" x2="80" y2="86" stroke="#b3aec0" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round" marker-end="url(#ah-grey)" />
+                <line x1="8" y1="148" x2="80" y2="86" stroke="#8800dd" stroke-width="2" stroke-linecap="round" marker-end="url(#ah-purple)" />
+              </svg>
+
+              <div class="flow-node flow-node--purple">
+                🗄️ main<small>everyone&rsquo;s work combined</small>
+              </div>
+            </div>
+
+            <div class="takeaway">
+              <strong>Plain terms:</strong> a branch is your own private copy to
+              work on freely; merging is putting everyone&rsquo;s finished
+              copies back together into the main repository.
+            </div>
+          </div>
         </div>
 
         <!-- SUMMARY TABLE -->
@@ -245,7 +322,7 @@
                 <td>Grabbing a fresh copy from the cabinet</td>
               </tr>
               <tr>
-                <td><span class="chip chip--lilac">Push</span></td>
+                <td><span class="chip chip--blue">Push</span></td>
                 <td>Upload your changes back to the repository</td>
                 <td>After you finish your changes</td>
                 <td>Returning the updated document to the cabinet</td>
