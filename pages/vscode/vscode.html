@@ -38,8 +38,8 @@
       <nav class="header-nav" aria-label="Site navigation">
         <a href="../../index.html">Home</a>
         <a href="../intro/intro.html">Intro</a>
-        <a href="../git-github/git-github.html">Git &amp; GitHub</a>
-        <a href="vscode.html" class="active">VS Code</a>
+        <a href="../git-github/git-github.html">GitHub FAQ</a>
+        <a href="vscode.html" class="active">Installations</a>
         <a href="../docs/docs.html">Resources</a>
         <a href="../team/team.html">Team</a>
       </nav>
@@ -63,13 +63,214 @@
 
       <!-- CONTENT -->
       <div class="content-wrapper">
-        <div class="kicker">Your coding environment &middot; 2026</div>
+        <div class="kicker">Your development environment &middot; 2026</div>
         <h2 class="hero-title">
-          Set it up once,<br />
-          <span>use it forever</span>
+          Everything you need,<br />
+          <span>set up in minutes</span>
         </h2>
 
-        <div class="step-list">
+        <!-- BLOCK 1: GIT -->
+        <div class="install-block">
+          <div class="install-block-header">
+            <span class="install-block-eyebrow">Block 01</span>
+            <h3 class="install-block-title">Git</h3>
+            <p class="install-block-desc">Version control that powers GitHub and Claude Code</p>
+          </div>
+          <div class="step-list">
+
+          <!-- STEP 1: GIT INSTALLATION -->
+          <div class="step-card collapsible" id="git-step-01">
+            <div class="step-number">01</div>
+            <div class="step-body">
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="git-step-01-content"
+              >
+                <h3>Installing Git for Windows</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="git-step-01-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    Git is the version control system that records every change
+                    you make to your code. Without it, none of the GitHub
+                    workflows or Claude Code commands in this guide will work.
+                    Installation takes about five minutes — and one setting
+                    during the process is critical for Claude Code to function
+                    correctly.
+                  </p>
+                </div>
+
+                <p class="method-section-title">Download &amp; run the installer</p>
+
+                <p class="method-step">
+                  <strong>1.</strong> Open your browser and go to
+                  <a href="https://git-scm.com/download/win" target="_blank" rel="noopener" class="inline-link">git-scm.com/download/win</a>.
+                  The 64-bit Windows installer will download automatically.
+                </p>
+                <p class="method-step">
+                  <strong>2.</strong> Open the downloaded
+                  <code class="cmd-inline">.exe</code> file. Click through the
+                  first few screens — the defaults are correct.
+                </p>
+                <p class="method-step">
+                  <strong>3.</strong> When you reach the
+                  <strong>"Adjusting your PATH environment"</strong> screen,
+                  select the middle option:
+                </p>
+
+                <div class="warning-note">
+                  <strong>&#9745;&nbsp; Git from the command line and also from 3rd-party software</strong>
+                  <br /><br />
+                  This is the most important setting in the entire installer.
+                  It adds Git to your system PATH so that PowerShell, VS Code's
+                  built-in terminal, and <strong>Claude Code</strong> can all
+                  call Git commands without any extra configuration. If you
+                  choose <em>"Use Git from Git Bash only"</em> instead, Claude
+                  Code will not be able to find Git and commands like
+                  <code class="cmd-inline">git commit</code> will fail.
+                </div>
+
+                <p class="method-step">
+                  <strong>4.</strong> Continue clicking <strong>Next</strong>
+                  on all remaining screens — leave every other setting at its
+                  default. Click <strong>Install</strong>, then
+                  <strong>Finish</strong>.
+                </p>
+
+                <p class="method-section-title" style="margin-top: 24px;">Verify the installation</p>
+
+                <p class="method-step">
+                  <strong>5.</strong> Close and reopen PowerShell (or any
+                  terminal) and run:
+                  <code class="cmd-inline">git --version</code>
+                </p>
+                <p class="method-step">
+                  You should see a response like
+                  <code class="cmd-inline">git version 2.x.x.windows.1</code>.
+                  This confirms Git is installed and available on your PATH.
+                </p>
+
+                <div class="part-hint">
+                  💡&nbsp; If the command returns <em>"git is not recognized"</em>,
+                  close <strong>all</strong> terminal windows and reopen them —
+                  PATH changes only take effect in new sessions. If it still
+                  fails, re-run the installer and make sure the correct PATH
+                  option is selected.
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: GIT GLOBAL CONFIG -->
+          <div class="step-card collapsible" id="git-step-02">
+            <div class="step-number">02</div>
+            <div class="step-body">
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="git-step-02-content"
+              >
+                <h3>Configuring Git Global Settings</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="git-step-02-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    Git global settings are stored in a single file on your
+                    machine and apply to every repository you work in. You only
+                    need to set these once. The commands below cover the settings
+                    that every developer needs from day one.
+                  </p>
+                </div>
+
+                <p class="method-section-title">Identity</p>
+
+                <p class="method-step">
+                  Git stamps your name and email on every commit you make. Open
+                  a terminal and run both commands, replacing the placeholder
+                  values with your own:
+                </p>
+                <p class="method-step">
+                  <code class="cmd-inline">git config --global user.name "Your Full Name"</code>
+                </p>
+                <p class="method-step">
+                  <code class="cmd-inline">git config --global user.email "you@example.com"</code>
+                </p>
+
+                <div class="part-hint">
+                  💡&nbsp; Use the same email address you registered with on
+                  GitHub. This is how GitHub links your commits to your profile
+                  and shows your contribution history correctly.
+                </div>
+
+                <p class="method-section-title" style="margin-top: 24px;">Default branch name</p>
+
+                <p class="method-step">
+                  Set the default branch name to <code class="cmd-inline">main</code>
+                  so every new repository you create starts on the same branch
+                  name used by GitHub:
+                </p>
+                <p class="method-step">
+                  <code class="cmd-inline">git config --global init.defaultBranch main</code>
+                </p>
+
+                <p class="method-section-title" style="margin-top: 24px;">Default editor</p>
+
+                <p class="method-step">
+                  Tell Git to open VS Code when it needs you to write or edit
+                  something (such as a commit message or a merge conflict). The
+                  <code class="cmd-inline">--wait</code> flag makes Git pause
+                  until you close the VS Code tab before continuing:
+                </p>
+                <p class="method-step">
+                  <code class="cmd-inline">git config --global core.editor "code --wait"</code>
+                </p>
+
+                <p class="method-section-title" style="margin-top: 24px;">Line ending handling</p>
+
+                <p class="method-step">
+                  Windows and Mac/Linux use different line ending characters.
+                  This setting tells Git to automatically convert line endings
+                  to the Windows format when you check out files, and back to
+                  Unix format when you commit — preventing invisible differences
+                  from cluttering your diffs:
+                </p>
+                <p class="method-step">
+                  <code class="cmd-inline">git config --global core.autocrlf true</code>
+                </p>
+
+                <p class="method-section-title" style="margin-top: 24px;">Verify your settings</p>
+
+                <p class="method-step">
+                  Run the following command to print every global setting that
+                  is currently configured:
+                </p>
+                <p class="method-step">
+                  <code class="cmd-inline">git config --global --list</code>
+                </p>
+                <p class="method-step">
+                  You should see your name, email, and the other values you just
+                  set listed in the output.
+                </p>
+
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+        <!-- BLOCK 2: VS CODE -->
+        <div class="install-block">
+          <div class="install-block-header">
+            <span class="install-block-eyebrow">Block 02</span>
+            <h3 class="install-block-title">VS Code</h3>
+            <p class="install-block-desc">Your code editor and development environment</p>
+          </div>
+          <div class="step-list">
 
           <!-- STEP 1: INSTALLATION -->
           <div class="step-card collapsible" id="step-01">
@@ -242,7 +443,7 @@
             </div>
           </div>
 
-          <!-- STEP 3: EXTENSIONS -->
+          <!-- STEP 3: GITHUB SYNC -->
           <div class="step-card collapsible" id="step-03">
             <div class="step-number">03</div>
             <div class="step-body">
@@ -251,10 +452,103 @@
                 aria-expanded="false"
                 aria-controls="step-03-content"
               >
-                <h3>Extensions &mdash; Supercharge Your Editor</h3>
+                <h3>Sync VS Code to Your GitHub Account</h3>
                 <span class="step-toggle-icon" aria-hidden="true">›</span>
               </button>
               <div class="step-content" id="step-03-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    Connecting VS Code to your GitHub account lets you push and
+                    pull code, clone repositories, and review pull requests
+                    without ever leaving the editor. It also unlocks
+                    <strong>Settings Sync</strong> — your extensions, themes,
+                    and preferences follow you to any machine automatically.
+                  </p>
+                </div>
+
+                <p class="method-section-title">Sign in to GitHub</p>
+
+                <p class="method-step">
+                  <strong>1.</strong> Look at the very bottom-left corner of VS
+                  Code. You will see a <strong>person icon</strong> (the
+                  Accounts button). Click it.
+                </p>
+                <p class="method-step">
+                  <strong>2.</strong> Click <strong>Sign in with GitHub</strong>.
+                  A browser window will open asking you to authorise VS Code.
+                </p>
+                <p class="method-step">
+                  <strong>3.</strong> Click <strong>Authorize Visual-Studio-Code</strong>
+                  in the browser. GitHub will redirect you back to VS Code
+                  automatically. You may see a prompt asking
+                  <em>"Allow this website to open VS Code?"</em> — click
+                  <strong>Open</strong>.
+                </p>
+                <p class="method-step">
+                  <strong>4.</strong> Back in VS Code, the person icon now
+                  shows your GitHub username. You are signed in.
+                </p>
+
+                <p class="method-section-title" style="margin-top: 24px;">Enable Settings Sync</p>
+
+                <p class="method-step">
+                  <strong>1.</strong> Click the person icon again and select
+                  <strong>Turn on Settings Sync&hellip;</strong>
+                </p>
+                <p class="method-step">
+                  <strong>2.</strong> A panel will appear listing what to sync —
+                  leave all options ticked and click <strong>Sign in &amp; Turn on</strong>.
+                </p>
+                <p class="method-step">
+                  <strong>3.</strong> Choose <strong>GitHub</strong> when asked
+                  which account to use. Your settings are now backed up and will
+                  restore on any new machine the moment you sign in.
+                </p>
+
+                <ul class="setup-checklist" style="margin-top: 16px;">
+                  <li>
+                    <span class="check-icon">☑</span>
+                    <span><strong>Extensions</strong> — every installed extension syncs automatically.</span>
+                  </li>
+                  <li>
+                    <span class="check-icon">☑</span>
+                    <span><strong>Keyboard shortcuts</strong> — your custom key bindings carry over.</span>
+                  </li>
+                  <li>
+                    <span class="check-icon">☑</span>
+                    <span><strong>Settings &amp; theme</strong> — font size, colour theme, and all preferences.</span>
+                  </li>
+                  <li>
+                    <span class="check-icon">☑</span>
+                    <span><strong>Snippets</strong> — any custom code snippets you have saved.</span>
+                  </li>
+                </ul>
+
+                <div class="part-hint">
+                  💡&nbsp; If you are on an Accenture-managed machine and the
+                  browser redirect does not return to VS Code automatically,
+                  copy the URL shown in the browser, paste it into VS Code's
+                  Command Palette (<code class="cmd-inline">Ctrl + Shift + P</code>),
+                  and run <strong>GitHub: Completing Authentication</strong>.
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4: EXTENSIONS -->
+          <div class="step-card collapsible" id="step-04">
+            <div class="step-number">04</div>
+            <div class="step-body">
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="step-04-content"
+              >
+                <h3>Extensions &mdash; Supercharge Your Editor</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="step-04-content" role="region">
                 <div class="exercise-intro">
                   <p>
                     Extensions are add-ons that give VS Code new capabilities.
@@ -279,10 +573,17 @@
 
                 <!-- FILTER TABS -->
                 <div class="ext-filter-tabs" role="tablist" aria-label="Filter extensions">
-                  <button class="ext-filter-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
-                  <button class="ext-filter-tab" data-filter="essential" role="tab" aria-selected="false">Essential</button>
-                  <button class="ext-filter-tab" data-filter="web" role="tab" aria-selected="false">HTML &amp; Web</button>
-                  <button class="ext-filter-tab" data-filter="appearance" role="tab" aria-selected="false">Appearance</button>
+                  <button class="ext-filter-tab active" data-filter="essential" role="tab" aria-selected="true">Essential</button>
+                  <button class="ext-filter-tab" data-filter="vscode-pro" role="tab" aria-selected="false">VS Code Pro</button>
+                </div>
+
+                <!-- VS CODE PRO NOTICE -->
+                <div class="ext-pro-notice" id="ext-pro-notice" style="display: none;">
+                  These extensions are <strong>not required</strong> to follow this guide or work with Git and GitHub.
+                  None of them affect your code's output. They are purely productivity tools — useful only if you
+                  spend a significant amount of time writing code inside VS Code and want a more polished
+                  editing experience. Feel free to skip them entirely or install them later once you are
+                  comfortable with the essentials.
                 </div>
 
                 <!-- EXTENSION GRID -->
@@ -316,9 +617,10 @@
                     <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
                   </div>
 
-                  <div class="ext-card" data-category="essential">
+                  <div class="ext-card" data-category="vscode-pro">
                     <div class="ext-card-meta">
-                      <span class="ext-type ext-type--essential">Essential</span>
+                      <span class="ext-type ext-type--vscode-pro">VS Code Pro</span>
+                      <span class="ext-type ext-type--optional">Optional</span>
                       <span class="ext-publisher">Prettier</span>
                     </div>
                     <h4 class="ext-title">Prettier &mdash; Code Formatter</h4>
@@ -330,8 +632,9 @@
                     <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
                   </div>
 
-                  <div class="ext-card" data-category="web">
+                  <div class="ext-card" data-category="vscode-pro">
                     <div class="ext-card-meta">
+                      <span class="ext-type ext-type--vscode-pro">VS Code Pro</span>
                       <span class="ext-type ext-type--web">HTML &amp; Web</span>
                       <span class="ext-publisher">ecmel</span>
                     </div>
@@ -344,8 +647,9 @@
                     <a href="https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
                   </div>
 
-                  <div class="ext-card" data-category="web">
+                  <div class="ext-card" data-category="vscode-pro">
                     <div class="ext-card-meta">
+                      <span class="ext-type ext-type--vscode-pro">VS Code Pro</span>
                       <span class="ext-type ext-type--web">HTML &amp; Web</span>
                       <span class="ext-publisher">Microsoft</span>
                     </div>
@@ -358,8 +662,9 @@
                     <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
                   </div>
 
-                  <div class="ext-card" data-category="web">
+                  <div class="ext-card" data-category="vscode-pro">
                     <div class="ext-card-meta">
+                      <span class="ext-type ext-type--vscode-pro">VS Code Pro</span>
                       <span class="ext-type ext-type--web">HTML &amp; Web</span>
                       <span class="ext-publisher">xabikos</span>
                     </div>
@@ -372,10 +677,10 @@
                     <a href="https://marketplace.visualstudio.com/items?itemName=xabikos.javascriptsnippets" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
                   </div>
 
-                  <div class="ext-card" data-category="appearance">
+                  <div class="ext-card" data-category="vscode-pro">
                     <div class="ext-card-meta">
+                      <span class="ext-type ext-type--vscode-pro">VS Code Pro</span>
                       <span class="ext-type ext-type--appearance">Appearance</span>
-                      <span class="ext-type ext-type--optional">Optional</span>
                       <span class="ext-publisher">GitHub</span>
                     </div>
                     <h4 class="ext-title">GitHub Theme</h4>
@@ -387,10 +692,10 @@
                     <a href="https://marketplace.visualstudio.com/items?itemName=github.github-vscode-theme" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
                   </div>
 
-                  <div class="ext-card" data-category="appearance">
+                  <div class="ext-card" data-category="vscode-pro">
                     <div class="ext-card-meta">
+                      <span class="ext-type ext-type--vscode-pro">VS Code Pro</span>
                       <span class="ext-type ext-type--appearance">Appearance</span>
-                      <span class="ext-type ext-type--optional">Optional</span>
                       <span class="ext-publisher">Philipp Kief</span>
                     </div>
                     <h4 class="ext-title">Material Icon Theme</h4>
@@ -407,6 +712,7 @@
             </div>
           </div>
 
+          </div>
         </div>
       </div>
     </main>

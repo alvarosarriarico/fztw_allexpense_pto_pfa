@@ -38,8 +38,8 @@
       <nav class="header-nav" aria-label="Site navigation">
         <a href="../../index.html">Home</a>
         <a href="../intro/intro.html">Intro</a>
-        <a href="git-github.html" class="active">Git &amp; GitHub</a>
-        <a href="../vscode/vscode.html">VS Code</a>
+        <a href="git-github.html" class="active">GitHub FAQ</a>
+        <a href="../vscode/vscode.html">Installations</a>
         <a href="../docs/docs.html">Resources</a>
         <a href="../team/team.html">Team</a>
       </nav>
@@ -78,7 +78,7 @@
                 aria-expanded="false"
                 aria-controls="step-01-content"
               >
-                <h3>Set Up Your Private Repository and Git Configuration</h3>
+                <h3>Set Up Your Private Repository</h3>
                 <span class="step-toggle-icon" aria-hidden="true">›</span>
               </button>
               <div class="step-content" id="step-01-content" role="region">
@@ -136,86 +136,9 @@
                   invitation. They must accept it before they can contribute.
                 </p>
 
-                <!-- PART 3: GIT CONFIG -->
+                <!-- PART 3: LOCAL COPY -->
                 <p class="method-section-title">
-                  Part 3 &mdash; Set up your Git identity
-                  <span class="role-tag role-tag--all">Everyone</span>
-                </p>
-                <p class="method-step">
-                  Before anyone can commit, Git needs to know who you are. Every
-                  commit is permanently stamped with your name and email — this
-                  is how your team can see who made which change in the project
-                  history. You only need to do this once per computer.
-                </p>
-
-                <div class="method-block">
-                  <div class="method-header">
-                    <span class="method-tag">Option A</span>
-                    Using Claude Code
-                  </div>
-                  <div class="method-body">
-                    <p class="method-step">
-                      <strong>1.</strong> Open PowerShell and type
-                      <code class="cmd-inline">claude</code> to start Claude Code.
-                    </p>
-                    <p class="method-step">
-                      <strong>2.</strong> Ask it to configure your identity:
-                    </p>
-                    <div class="cmd-block">
-                      "Set my global Git username to '[Your Name]' and my Git
-                      email to '[your.email@accenture.com]'"
-                    </div>
-                    <p class="method-step">
-                      <strong>3.</strong> Claude Code will run the two
-                      configuration commands and confirm they were applied.
-                    </p>
-                    <p class="cmd-explain">
-                      What is happening: Claude Code is running
-                      <code class="cmd-inline">git config --global</code> on
-                      your behalf — the same commands as Option B. The
-                      <code class="cmd-inline">--global</code> flag means this
-                      setting applies to every repository on your computer, not
-                      just this one.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="method-block">
-                  <div class="method-header">
-                    <span class="method-tag">Option B</span>
-                    Using PowerShell + Git
-                  </div>
-                  <div class="method-body">
-                    <p class="method-step">
-                      Open PowerShell and run these two commands, replacing the
-                      placeholder values with your own name and email:
-                    </p>
-                    <div class="cmd-block">git config --global user.name "Your Name"</div>
-                    <p class="cmd-explain">
-                      Sets the name that will appear on every commit you make.
-                      Use your real name so your teammates can identify your
-                      contributions at a glance.
-                    </p>
-                    <div class="cmd-block">git config --global user.email "your.email@accenture.com"</div>
-                    <p class="cmd-explain">
-                      Sets the email attached to your commits. Use your
-                      Accenture email so your history matches your GitHub
-                      account. The <code class="cmd-inline">--global</code>
-                      flag applies this to all repositories on your computer —
-                      you will not need to repeat it.
-                    </p>
-                    <div class="cmd-block">git config --global --list</div>
-                    <p class="cmd-explain">
-                      Optional but recommended: lists all your global Git
-                      settings so you can confirm the name and email were saved
-                      correctly before moving on.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- PART 4: LOCAL COPY -->
-                <p class="method-section-title">
-                  Part 4 &mdash; Set up your local copy
+                  Part 3 &mdash; Set up your local copy
                   <span class="role-tag role-tag--all">Everyone</span>
                 </p>
                 <p class="part-hint">
@@ -228,7 +151,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option A</span>
                     Using Claude Code
                   </div>
                   <div class="method-body">
@@ -254,7 +176,7 @@
                     <p class="cmd-explain">
                       What is happening: Claude Code is running
                       <code class="cmd-inline">git clone</code> on your behalf
-                      — the same command as Option B, but without you having to
+                      — the same command as the terminal approach, but without you having to
                       type or remember it.
                     </p>
                   </div>
@@ -262,7 +184,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option B</span>
                     Using PowerShell + Git
                   </div>
                   <div class="method-body">
@@ -393,7 +314,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option A</span>
                     Using Claude Code
                   </div>
                   <div class="method-body">
@@ -423,7 +343,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option B</span>
                     Using PowerShell + Git
                   </div>
                   <div class="method-body">
@@ -459,7 +378,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option A</span>
                     Using Claude Code
                   </div>
                   <div class="method-body">
@@ -496,7 +414,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option B</span>
                     Using PowerShell + Git
                   </div>
                   <div class="method-body">
@@ -613,7 +530,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option A</span>
                     Using Claude Code
                   </div>
                   <div class="method-body">
@@ -634,7 +550,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option B</span>
                     Using PowerShell + Git
                   </div>
                   <div class="method-body">
@@ -676,7 +591,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option A</span>
                     Using Claude Code
                   </div>
                   <div class="method-body">
@@ -710,7 +624,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option B</span>
                     Using PowerShell + Git
                   </div>
                   <div class="method-body">
@@ -984,7 +897,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option A</span>
                     Using Claude Code
                   </div>
                   <div class="method-body">
@@ -1011,7 +923,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option B</span>
                     Using PowerShell + Git
                   </div>
                   <div class="method-body">
@@ -1096,7 +1007,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option A</span>
                     Using Claude Code
                   </div>
                   <div class="method-body">
@@ -1126,7 +1036,6 @@
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option B</span>
                     Using GitHub directly
                   </div>
                   <div class="method-body">
@@ -1255,7 +1164,6 @@ Their version of the line(s)
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option A</span>
                     Using Claude Code
                   </div>
                   <div class="method-body">
@@ -1270,7 +1178,6 @@ Their version of the line(s)
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option B</span>
                     Using PowerShell + Git
                   </div>
                   <div class="method-body">
@@ -1311,7 +1218,6 @@ Their version of the line(s)
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option A</span>
                     Using Claude Code
                   </div>
                   <div class="method-body">
@@ -1332,7 +1238,6 @@ Their version of the line(s)
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option B</span>
                     Using PowerShell + Git
                   </div>
                   <div class="method-body">
@@ -1385,7 +1290,6 @@ git commit -m "Resolve merge conflicts"</div>
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option A</span>
                     Using Claude Code
                   </div>
                   <div class="method-body">
@@ -1395,7 +1299,6 @@ git commit -m "Resolve merge conflicts"</div>
 
                 <div class="method-block">
                   <div class="method-header">
-                    <span class="method-tag">Option B</span>
                     Using PowerShell + Git
                   </div>
                   <div class="method-body">

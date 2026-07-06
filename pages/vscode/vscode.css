@@ -9,6 +9,44 @@
   padding-bottom: 64px;
 }
 
+/* INSTALL BLOCKS */
+.install-block {
+  margin-bottom: 52px;
+}
+.install-block-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(161, 0, 255, 0.18);
+}
+.install-block-eyebrow {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--acc-purple);
+  background: rgba(161, 0, 255, 0.07);
+  border: 1px solid rgba(161, 0, 255, 0.2);
+  padding: 3px 9px;
+  white-space: nowrap;
+}
+.install-block-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--acc-text);
+  margin: 0;
+  line-height: 1;
+}
+.install-block-desc {
+  font-size: 0.8rem;
+  color: var(--acc-text-muted);
+  margin: 0;
+  margin-left: auto;
+  opacity: 0.7;
+}
+
 /* STEP LIST */
 .step-list {
   display: flex;
@@ -334,6 +372,20 @@
   background: rgba(120, 120, 120, 0.07);
   color: #555;
   border: 1px solid rgba(120, 120, 120, 0.2);
+}
+.ext-type--vscode-pro {
+  background: rgba(235, 130, 0, 0.08);
+  color: #7a4500;
+  border: 1px solid rgba(235, 130, 0, 0.25);
+}
+.ext-pro-notice {
+  background: rgba(235, 130, 0, 0.06);
+  border: 1px solid rgba(235, 130, 0, 0.22);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: var(--acc-text-muted);
 }
 .ext-publisher {
   font-size: 0.7rem;
