@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collaborative Development</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../../styles.css" rel="stylesheet" />
+    <link href="intro.css" rel="stylesheet" />
+  </head>
+  <body class="page-intro">
+    <!-- FIXED BACKGROUND LAYERS -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-symbol">></div>
+
+    <!-- FX: SCANLINES -->
+    <div class="fx-scanlines" aria-hidden="true"></div>
+
+    <!-- FX: FILM GRAIN -->
+    <div class="fx-grain" aria-hidden="true"></div>
+
+    <header id="header">
+      <div class="header-left">
+        <span class="logo-accent">></span>
+        <div class="header-title">
+          <h1>From Zero to WoW</h1>
+          <div class="header-subtitle">
+            Git &middot; GitHub &middot; VS Code
+          </div>
+        </div>
+      </div>
+      <nav class="header-nav" aria-label="Site navigation">
+        <a href="../../index.html">Home</a>
+        <a href="intro.html" class="active">Intro</a>
+        <a href="../git-github/git-github.html">Git &amp; GitHub</a>
+        <a href="../vscode/vscode.html">VS Code</a>
+        <a href="../docs/docs.html">Resources</a>
+        <a href="../team/team.html">Team</a>
+      </nav>
+      <div class="header-badge">
+        <span class="live-dot"></span>
+        <span>Data &amp; AI Strategy &middot; 2026</span>
+      </div>
+    </header>
+
+    <main>
+      <!-- FX: AURORA -->
+      <div class="fx-aurora" aria-hidden="true">
+        <div class="fx-aurora-1"></div>
+        <div class="fx-aurora-2"></div>
+        <div class="fx-aurora-3"></div>
+        <div class="fx-aurora-4"></div>
+      </div>
+
+      <!-- FX: PERSPECTIVE GRID -->
+      <div class="fx-perspective-grid" aria-hidden="true"></div>
+
+      <!-- CONTENT -->
+      <div class="content-wrapper">
+        <div class="kicker">Intro to collaborative work &middot; 2026</div>
+        <h2 class="hero-title">
+          Your project has a <span>home</span><br />
+          here&rsquo;s how to use it
+        </h2>
+
+        <!-- LEAD / ANALOGY -->
+        <div class="intro-lead">
+          <div class="intro-lead-icon" aria-hidden="true">🏢</div>
+          <p>
+            <strong>One analogy to remember:</strong> think of GitHub as a
+            shared office filing cabinet. Everyone on the team can access the
+            same folders, take copies home to work on, and bring their changes
+            back &mdash; without overwriting each other&rsquo;s work. Three
+            concepts are all you need to get started, and no technical
+            background is required.
+          </p>
+        </div>
+
+        <!-- THREE CONCEPTS -->
+        <p class="section-eyebrow">The three concepts</p>
+
+        <div class="concept-cards">
+
+          <!-- REPOSITORY -->
+          <div class="concept-card concept-card--repo">
+            <div class="concept-header">
+              <div class="concept-icon" aria-hidden="true">🗄️</div>
+              <div>
+                <div class="concept-title">Repository</div>
+                <span class="concept-tag">The central hub</span>
+              </div>
+            </div>
+            <div class="concept-body">
+              <p>
+                A repository (or &ldquo;repo&rdquo;) is a
+                <strong>folder in the cloud</strong> that stores all your
+                project&rsquo;s files &mdash; code, documents, images &mdash;
+                along with the <em>entire history</em> of every change ever
+                made.
+              </p>
+              <p>
+                Anyone on the team can see the latest version of everything, who
+                changed what, and when. You can always roll back to a previous
+                version if something breaks.
+              </p>
+            </div>
+
+            <div class="file-grid">
+              <div class="file-chip file-chip--hub">📁 Repository</div>
+              <div class="file-chip">📄 index.html</div>
+              <div class="file-chip">🎨 styles.css</div>
+              <div class="file-chip">🖼️ logo.png</div>
+              <div class="file-chip">📝 README.md</div>
+              <div class="file-chip">🕰️ Full history</div>
+            </div>
+
+            <div class="takeaway">
+              <strong>Plain terms:</strong> the repo is the single
+              authoritative place where the project lives &mdash; the master
+              binder everyone refers to.
+            </div>
+          </div>
+
+          <!-- PULL -->
+          <div class="concept-card concept-card--pull">
+            <div class="concept-header">
+              <div class="concept-icon" aria-hidden="true">⬇️</div>
+              <div>
+                <div class="concept-title">Pull</div>
+                <span class="concept-tag">Getting the latest version</span>
+              </div>
+            </div>
+            <div class="concept-body">
+              <p>
+                <strong>Pulling</strong> means downloading the most up-to-date
+                version of the project from the repository onto your computer.
+                You do this so you&rsquo;re always working with the latest
+                changes &mdash; including anything teammates have added.
+              </p>
+              <p>
+                Like walking to the office cabinet, grabbing a fresh copy of the
+                document, and bringing it back to your desk.
+              </p>
+            </div>
+
+            <div class="flow">
+              <div class="flow-node flow-node--green">
+                🗄️ Repository<small>latest version</small>
+              </div>
+              <div class="flow-arrow flow-arrow--green">
+                <svg class="chevron-arrow" width="52" height="18" viewBox="0 0 52 18" aria-hidden="true">
+                  <line x1="2" y1="9" x2="42" y2="9" stroke="#00a862" stroke-width="2.5" stroke-linecap="round" />
+                  <polyline points="36,3 44,9 36,15" fill="none" stroke="#00a862" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="fa-label">PULL</span>
+              </div>
+              <div class="flow-node">
+                💻 Your computer<small>your local copy</small>
+              </div>
+            </div>
+
+            <div class="takeaway">
+              <strong>Plain terms:</strong> Pull = &ldquo;give me the newest
+              version.&rdquo; Always pull before starting work to stay in sync
+              with your team.
+            </div>
+          </div>
+
+          <!-- PUSH -->
+          <div class="concept-card concept-card--push">
+            <div class="concept-header">
+              <div class="concept-icon" aria-hidden="true">⬆️</div>
+              <div>
+                <div class="concept-title">Push</div>
+                <span class="concept-tag">Sharing your changes</span>
+              </div>
+            </div>
+            <div class="concept-body">
+              <p>
+                <strong>Pushing</strong> means uploading the changes you&rsquo;ve
+                made on your computer back to the repository, so everyone else on
+                the team can see and use them.
+              </p>
+              <p>
+                Until you push, your changes only exist on your machine &mdash;
+                nobody else can see them. Pushing is how you &ldquo;save to the
+                shared drive.&rdquo;
+              </p>
+            </div>
+
+            <div class="flow">
+              <div class="flow-node">
+                💻 Your computer<small>with your changes</small>
+              </div>
+              <div class="flow-arrow flow-arrow--lilac">
+                <svg class="chevron-arrow" width="52" height="18" viewBox="0 0 52 18" aria-hidden="true">
+                  <line x1="2" y1="9" x2="42" y2="9" stroke="#8800dd" stroke-width="2.5" stroke-linecap="round" />
+                  <polyline points="36,3 44,9 36,15" fill="none" stroke="#8800dd" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="fa-label">PUSH</span>
+              </div>
+              <div class="flow-node flow-node--lilac">
+                🗄️ Repository<small>updated for all</small>
+              </div>
+            </div>
+
+            <div class="takeaway">
+              <strong>Plain terms:</strong> Push = &ldquo;here are my changes,
+              share them with everyone.&rdquo; It&rsquo;s how your work becomes
+              part of the official project.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SUMMARY TABLE -->
+        <div class="summary-section">
+          <p class="summary-title">Quick reference</p>
+          <table class="sum-table">
+            <thead>
+              <tr>
+                <th>Concept</th>
+                <th>What it is</th>
+                <th>When to use it</th>
+                <th>Analogy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="chip chip--purple">Repository</span></td>
+                <td>The shared project folder in the cloud</td>
+                <td>Always &mdash; it&rsquo;s the source of truth</td>
+                <td>The office master binder</td>
+              </tr>
+              <tr>
+                <td><span class="chip chip--green">Pull</span></td>
+                <td>Download the latest version to your computer</td>
+                <td>Before you start working each day</td>
+                <td>Grabbing a fresh copy from the cabinet</td>
+              </tr>
+              <tr>
+                <td><span class="chip chip--lilac">Push</span></td>
+                <td>Upload your changes back to the repository</td>
+                <td>After you finish your changes</td>
+                <td>Returning the updated document to the cabinet</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- WORKFLOW NOTE -->
+        <p class="workflow-note">
+          <strong>The workflow in one line:</strong> Pull &rarr; make your
+          changes &rarr; Push. Repeat every time you work on the project.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Accenture</p>
+      <p class="footer-pill">
+        Data &amp; AI Strategy &middot; Internal resource
+      </p>
+    </footer>
+
+    <script src="../../script.js"></script>
+  </body>
+</html>
