@@ -16,8 +16,8 @@ document.querySelectorAll(".method-block").forEach((block) => {
     block.dataset.method = "claude";
   } else if (text.includes("PowerShell") || text.includes("GitHub directly")) {
     block.dataset.method = "terminal";
-  } else if (block.closest("#step-06")) {
-    // step-06 is Claude Code only — no terminal equivalent
+  } else if (block.closest("#step-08")) {
+    // step-08 is Claude Code only — no terminal equivalent
     block.dataset.method = "claude";
   }
 });
