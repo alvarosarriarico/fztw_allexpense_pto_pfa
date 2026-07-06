@@ -142,7 +142,7 @@
             </div>
           </div>
 
-          <!-- STEP 2: FIRST-TIME SETUP -->
+          <!-- STEP 2: GITHUB SYNC -->
           <div class="step-card collapsible" id="step-02">
             <div class="step-number">02</div>
             <div class="step-body">
@@ -151,10 +151,103 @@
                 aria-expanded="false"
                 aria-controls="step-02-content"
               >
-                <h3>Getting Familiar &mdash; First-Time Setup</h3>
+                <h3>Sync VS Code to Your GitHub Account</h3>
                 <span class="step-toggle-icon" aria-hidden="true">›</span>
               </button>
               <div class="step-content" id="step-02-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    Connecting VS Code to your GitHub account lets you push and
+                    pull code, clone repositories, and review pull requests
+                    without ever leaving the editor. It also unlocks
+                    <strong>Settings Sync</strong> — your extensions, themes,
+                    and preferences follow you to any machine automatically.
+                  </p>
+                </div>
+
+                <p class="method-section-title">Sign in to GitHub</p>
+
+                <p class="method-step">
+                  <strong>1.</strong> Look at the very bottom-left corner of VS
+                  Code. You will see a <strong>person icon</strong> (the
+                  Accounts button). Click it.
+                </p>
+                <p class="method-step">
+                  <strong>2.</strong> Click <strong>Sign in with GitHub</strong>.
+                  A browser window will open asking you to authorise VS Code.
+                </p>
+                <p class="method-step">
+                  <strong>3.</strong> Click <strong>Authorize Visual-Studio-Code</strong>
+                  in the browser. GitHub will redirect you back to VS Code
+                  automatically. You may see a prompt asking
+                  <em>"Allow this website to open VS Code?"</em> — click
+                  <strong>Open</strong>.
+                </p>
+                <p class="method-step">
+                  <strong>4.</strong> Back in VS Code, the person icon now
+                  shows your GitHub username. You are signed in.
+                </p>
+
+                <p class="method-section-title" style="margin-top: 24px;">Enable Settings Sync</p>
+
+                <p class="method-step">
+                  <strong>1.</strong> Click the person icon again and select
+                  <strong>Turn on Settings Sync&hellip;</strong>
+                </p>
+                <p class="method-step">
+                  <strong>2.</strong> A panel will appear listing what to sync —
+                  leave all options ticked and click <strong>Sign in &amp; Turn on</strong>.
+                </p>
+                <p class="method-step">
+                  <strong>3.</strong> Choose <strong>GitHub</strong> when asked
+                  which account to use. Your settings are now backed up and will
+                  restore on any new machine the moment you sign in.
+                </p>
+
+                <ul class="setup-checklist" style="margin-top: 16px;">
+                  <li>
+                    <span class="check-icon">☑</span>
+                    <span><strong>Extensions</strong> — every installed extension syncs automatically.</span>
+                  </li>
+                  <li>
+                    <span class="check-icon">☑</span>
+                    <span><strong>Keyboard shortcuts</strong> — your custom key bindings carry over.</span>
+                  </li>
+                  <li>
+                    <span class="check-icon">☑</span>
+                    <span><strong>Settings &amp; theme</strong> — font size, colour theme, and all preferences.</span>
+                  </li>
+                  <li>
+                    <span class="check-icon">☑</span>
+                    <span><strong>Snippets</strong> — any custom code snippets you have saved.</span>
+                  </li>
+                </ul>
+
+                <div class="part-hint">
+                  💡&nbsp; If you are on an Accenture-managed machine and the
+                  browser redirect does not return to VS Code automatically,
+                  copy the URL shown in the browser, paste it into VS Code's
+                  Command Palette (<code class="cmd-inline">Ctrl + Shift + P</code>),
+                  and run <strong>GitHub: Completing Authentication</strong>.
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: FIRST-TIME SETUP -->
+          <div class="step-card collapsible" id="step-03">
+            <div class="step-number">03</div>
+            <div class="step-body">
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="step-03-content"
+              >
+                <h3>Getting Familiar &mdash; First-Time Setup</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="step-03-content" role="region">
                 <div class="exercise-intro">
                   <p>
                     VS Code opens to a Welcome tab the first time you launch it.
@@ -241,19 +334,19 @@
             </div>
           </div>
 
-          <!-- STEP 3: EXTENSIONS -->
-          <div class="step-card collapsible" id="step-03">
-            <div class="step-number">03</div>
+          <!-- STEP 4: EXTENSIONS -->
+          <div class="step-card collapsible" id="step-04">
+            <div class="step-number">04</div>
             <div class="step-body">
               <button
                 class="step-toggle"
                 aria-expanded="false"
-                aria-controls="step-03-content"
+                aria-controls="step-04-content"
               >
                 <h3>Extensions &mdash; Supercharge Your Editor</h3>
                 <span class="step-toggle-icon" aria-hidden="true">›</span>
               </button>
-              <div class="step-content" id="step-03-content" role="region">
+              <div class="step-content" id="step-04-content" role="region">
                 <div class="exercise-intro">
                   <p>
                     Extensions are add-ons that give VS Code new capabilities.
@@ -278,10 +371,17 @@
 
                 <!-- FILTER TABS -->
                 <div class="ext-filter-tabs" role="tablist" aria-label="Filter extensions">
-                  <button class="ext-filter-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
-                  <button class="ext-filter-tab" data-filter="essential" role="tab" aria-selected="false">Essential</button>
-                  <button class="ext-filter-tab" data-filter="web" role="tab" aria-selected="false">HTML &amp; Web</button>
-                  <button class="ext-filter-tab" data-filter="appearance" role="tab" aria-selected="false">Appearance</button>
+                  <button class="ext-filter-tab active" data-filter="essential" role="tab" aria-selected="true">Essential</button>
+                  <button class="ext-filter-tab" data-filter="vscode-pro" role="tab" aria-selected="false">VS Code Pro</button>
+                </div>
+
+                <!-- VS CODE PRO NOTICE -->
+                <div class="ext-pro-notice" id="ext-pro-notice" style="display: none;">
+                  These extensions are <strong>not required</strong> to follow this guide or work with Git and GitHub.
+                  None of them affect your code's output. They are purely productivity tools — useful only if you
+                  spend a significant amount of time writing code inside VS Code and want a more polished
+                  editing experience. Feel free to skip them entirely or install them later once you are
+                  comfortable with the essentials.
                 </div>
 
                 <!-- EXTENSION GRID -->
@@ -315,9 +415,10 @@
                     <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
                   </div>
 
-                  <div class="ext-card" data-category="essential">
+                  <div class="ext-card" data-category="vscode-pro">
                     <div class="ext-card-meta">
-                      <span class="ext-type ext-type--essential">Essential</span>
+                      <span class="ext-type ext-type--vscode-pro">VS Code Pro</span>
+                      <span class="ext-type ext-type--optional">Optional</span>
                       <span class="ext-publisher">Prettier</span>
                     </div>
                     <h4 class="ext-title">Prettier &mdash; Code Formatter</h4>
@@ -329,8 +430,9 @@
                     <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
                   </div>
 
-                  <div class="ext-card" data-category="web">
+                  <div class="ext-card" data-category="vscode-pro">
                     <div class="ext-card-meta">
+                      <span class="ext-type ext-type--vscode-pro">VS Code Pro</span>
                       <span class="ext-type ext-type--web">HTML &amp; Web</span>
                       <span class="ext-publisher">ecmel</span>
                     </div>
@@ -343,8 +445,9 @@
                     <a href="https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
                   </div>
 
-                  <div class="ext-card" data-category="web">
+                  <div class="ext-card" data-category="vscode-pro">
                     <div class="ext-card-meta">
+                      <span class="ext-type ext-type--vscode-pro">VS Code Pro</span>
                       <span class="ext-type ext-type--web">HTML &amp; Web</span>
                       <span class="ext-publisher">Microsoft</span>
                     </div>
@@ -357,8 +460,9 @@
                     <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
                   </div>
 
-                  <div class="ext-card" data-category="web">
+                  <div class="ext-card" data-category="vscode-pro">
                     <div class="ext-card-meta">
+                      <span class="ext-type ext-type--vscode-pro">VS Code Pro</span>
                       <span class="ext-type ext-type--web">HTML &amp; Web</span>
                       <span class="ext-publisher">xabikos</span>
                     </div>
@@ -371,10 +475,10 @@
                     <a href="https://marketplace.visualstudio.com/items?itemName=xabikos.javascriptsnippets" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
                   </div>
 
-                  <div class="ext-card" data-category="appearance">
+                  <div class="ext-card" data-category="vscode-pro">
                     <div class="ext-card-meta">
+                      <span class="ext-type ext-type--vscode-pro">VS Code Pro</span>
                       <span class="ext-type ext-type--appearance">Appearance</span>
-                      <span class="ext-type ext-type--optional">Optional</span>
                       <span class="ext-publisher">GitHub</span>
                     </div>
                     <h4 class="ext-title">GitHub Theme</h4>
@@ -386,10 +490,10 @@
                     <a href="https://marketplace.visualstudio.com/items?itemName=github.github-vscode-theme" target="_blank" rel="noopener" class="ext-link">Install in VS Code &rarr;</a>
                   </div>
 
-                  <div class="ext-card" data-category="appearance">
+                  <div class="ext-card" data-category="vscode-pro">
                     <div class="ext-card-meta">
+                      <span class="ext-type ext-type--vscode-pro">VS Code Pro</span>
                       <span class="ext-type ext-type--appearance">Appearance</span>
-                      <span class="ext-type ext-type--optional">Optional</span>
                       <span class="ext-publisher">Philipp Kief</span>
                     </div>
                     <h4 class="ext-title">Material Icon Theme</h4>
