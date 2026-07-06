@@ -16,9 +16,6 @@ document.querySelectorAll(".method-block").forEach((block) => {
     block.dataset.method = "claude";
   } else if (text.includes("PowerShell") || text.includes("GitHub directly")) {
     block.dataset.method = "terminal";
-  } else if (block.closest("#step-04")) {
-    // step-04 is Claude Code only — no terminal equivalent
-    block.dataset.method = "claude";
   }
 });
 
@@ -26,11 +23,12 @@ document.querySelectorAll(".method-block").forEach((block) => {
 document.querySelectorAll(".step-content").forEach((content) => {
   if (!content.querySelector(".method-block[data-method]")) return;
 
+  const terminalLabel = content.dataset.filterLabelTerminal || "Terminal";
   const filter = document.createElement("div");
   filter.className = "method-filter";
   filter.innerHTML =
     '<button class="method-filter-btn active" data-filter="claude" aria-pressed="true">Claude Code</button>' +
-    '<button class="method-filter-btn" data-filter="terminal" aria-pressed="false">Terminal</button>';
+    `<button class="method-filter-btn" data-filter="terminal" aria-pressed="false">${terminalLabel}</button>`;
 
   const notice = document.createElement("div");
   notice.className = "method-filter-notice";
@@ -58,6 +56,36 @@ document.querySelectorAll(".step-content").forEach((content) => {
       applyFilter(content, btn.dataset.filter);
     });
   });
+});
+
+// Inject copy-to-clipboard buttons into all cmd-blocks
+const ICON_COPY =
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+  '<rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>' +
+  '<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>' +
+  '</svg>';
+const ICON_CHECK =
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+  '<polyline points="20 6 9 17 4 12"></polyline>' +
+  '</svg>';
+
+document.querySelectorAll(".cmd-block").forEach((block) => {
+  const copyText = block.textContent.trim();
+  const btn = document.createElement("button");
+  btn.className = "cmd-copy-btn";
+  btn.setAttribute("aria-label", "Copy to clipboard");
+  btn.innerHTML = ICON_COPY;
+  btn.addEventListener("click", () => {
+    navigator.clipboard.writeText(copyText).then(() => {
+      btn.innerHTML = ICON_CHECK;
+      btn.classList.add("copied");
+      setTimeout(() => {
+        btn.innerHTML = ICON_COPY;
+        btn.classList.remove("copied");
+      }, 1800);
+    });
+  });
+  block.appendChild(btn);
 });
 
 function applyFilter(content, method) {
