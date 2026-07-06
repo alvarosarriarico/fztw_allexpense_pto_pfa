@@ -2,6 +2,8 @@
 :root {
   --push-blue: #0070f3;
   --push-blue-dark: #004bb5;
+  --commit-amber: #c08a00;
+  --commit-amber-dark: #8a5a00;
 }
 
 /* INTRO PAGE LAYOUT */
@@ -128,6 +130,10 @@
 .concept-card--branch {
   grid-column: 1 / -1;
   border-left: 3px solid var(--acc-lilac);
+}
+.concept-card--commit {
+  grid-column: 1 / -1;
+  border-left: 3px solid var(--commit-amber);
 }
 
 /* CONCEPT HEADER */
@@ -364,6 +370,22 @@
   color: var(--acc-lilac-soft);
   border: 1px solid rgba(136, 0, 221, 0.18);
 }
+
+/* COMMIT SECTION */
+.concept-card--commit .concept-icon {
+  background: rgba(192, 138, 0, 0.1);
+  border: 1px solid rgba(192, 138, 0, 0.28);
+}
+.concept-card--commit .concept-tag {
+  background: rgba(192, 138, 0, 0.09);
+  color: var(--commit-amber-dark);
+  border: 1px solid rgba(192, 138, 0, 0.28);
+}
+.concept-card--commit .takeaway {
+  background: rgba(192, 138, 0, 0.06);
+  color: var(--commit-amber-dark);
+  border: 1px solid rgba(192, 138, 0, 0.2);
+}
 .branch-flow {
   gap: 4px;
   align-items: center;
@@ -467,6 +489,16 @@
   background: rgba(0, 112, 243, 0.08);
   color: var(--push-blue-dark);
   border: 1px solid rgba(0, 112, 243, 0.28);
+}
+.chip--lilac {
+  background: rgba(136, 0, 221, 0.08);
+  color: var(--acc-lilac-soft);
+  border: 1px solid rgba(136, 0, 221, 0.24);
+}
+.chip--amber {
+  background: rgba(192, 138, 0, 0.1);
+  color: var(--commit-amber-dark);
+  border: 1px solid rgba(192, 138, 0, 0.3);
 }
 
 /* WORKFLOW NOTE */

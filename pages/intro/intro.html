@@ -38,6 +38,7 @@
       <nav class="header-nav" aria-label="Site navigation">
         <a href="../../index.html">Home</a>
         <a href="intro.html" class="active">Intro</a>
+        <a href="../challenge/challenge.html">Challenge</a>
         <a href="../git-github/git-github.html">GitHub FAQ</a>
         <a href="../vscode/vscode.html">Installations</a>
         <a href="../docs/docs.html">Resources</a>
@@ -294,6 +295,48 @@
               copies back together into the main repository.
             </div>
           </div>
+
+          <!-- COMMITS -->
+          <div class="concept-card concept-card--commit">
+            <div class="concept-header">
+              <div class="concept-icon" aria-hidden="true">📸</div>
+              <div>
+                <div class="concept-title">Commits</div>
+                <span class="concept-tag">Saving your progress</span>
+              </div>
+            </div>
+            <div class="concept-body">
+              <p>
+                A <strong>commit</strong> is a saved snapshot of your work
+                &mdash; a checkpoint in your project&rsquo;s history. Each one
+                records exactly what changed, who changed it, and a short
+                message you write describing why.
+              </p>
+              <p>
+                Commit <em>often</em>, in small meaningful chunks. Your commits
+                build a timeline you can scroll back through &mdash; and roll
+                back to &mdash; so a mistake never costs you your good work.
+              </p>
+            </div>
+
+            <div class="git-note">
+              <span class="git-note-tag">merge</span>
+              <p>
+                <strong>Do commits matter for merging? Yes.</strong> Commits are
+                the unit Git actually shares and combines &mdash; pushing sends
+                your commits, pulling brings in your teammates&rsquo;, and
+                merging a branch means folding its commits into the shared
+                history. Small, clearly-described commits make merges (and any
+                conflicts) far easier to follow and resolve.
+              </p>
+            </div>
+
+            <div class="takeaway">
+              <strong>Plain terms:</strong> a commit is a labelled checkpoint.
+              Save early, save often &mdash; they are both your personal undo
+              history and the building blocks everyone merges together.
+            </div>
+          </div>
         </div>
 
         <!-- SUMMARY TABLE -->
@@ -326,6 +369,18 @@
                 <td>Upload your changes back to the repository</td>
                 <td>After you finish your changes</td>
                 <td>Returning the updated document to the cabinet</td>
+              </tr>
+              <tr>
+                <td><span class="chip chip--lilac">Branches</span></td>
+                <td>Your own private copy to work on without disturbing others</td>
+                <td>Whenever you start your own piece of work</td>
+                <td>Taking your own copy home from the cabinet</td>
+              </tr>
+              <tr>
+                <td><span class="chip chip--amber">Commits</span></td>
+                <td>Labelled checkpoints that snapshot your work</td>
+                <td>Every time you finish a small, meaningful change</td>
+                <td>Numbered entries in a logbook you can flip back through</td>
               </tr>
             </tbody>
           </table>

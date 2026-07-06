@@ -400,6 +400,25 @@
   display: block;
 }
 
+/* GLOBAL METHOD FILTER — top-right control that drives every step */
+.method-filter-global {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+.method-filter-global-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--acc-text-muted);
+}
+.method-filter-global .method-filter {
+  margin: 0;
+}
+
 /* RESPONSIVE */
 @media (max-width: 720px) {
   .page-exercise main {

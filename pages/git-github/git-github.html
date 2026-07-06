@@ -38,6 +38,7 @@
       <nav class="header-nav" aria-label="Site navigation">
         <a href="../../index.html">Home</a>
         <a href="../intro/intro.html">Intro</a>
+        <a href="../challenge/challenge.html">Challenge</a>
         <a href="git-github.html" class="active">GitHub FAQ</a>
         <a href="../vscode/vscode.html">Installations</a>
         <a href="../docs/docs.html">Resources</a>
@@ -68,6 +69,30 @@
           Collaborative workflows<br />
           <span>in Git &amp; GitHub</span>
         </h2>
+
+        <div
+          class="method-filter-global"
+          role="group"
+          aria-label="Choose instruction method for all steps"
+        >
+          <span class="method-filter-global-label">Show all steps using</span>
+          <div class="method-filter">
+            <button
+              class="method-filter-btn active"
+              data-filter="claude"
+              aria-pressed="true"
+            >
+              Claude Code
+            </button>
+            <button
+              class="method-filter-btn"
+              data-filter="terminal"
+              aria-pressed="false"
+            >
+              Terminal
+            </button>
+          </div>
+        </div>
 
         <div class="step-list">
           <div class="step-card collapsible" id="step-01">
