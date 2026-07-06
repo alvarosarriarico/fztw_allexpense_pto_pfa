@@ -535,7 +535,7 @@
             </div>
           </div>
 
-          <!-- STEP 4: EXTENSIONS -->
+          <!-- STEP 4: TRUSTED WORKSPACES -->
           <div class="step-card collapsible" id="step-04">
             <div class="step-number">04</div>
             <div class="step-body">
@@ -544,10 +544,112 @@
                 aria-expanded="false"
                 aria-controls="step-04-content"
               >
-                <h3>Extensions &mdash; Supercharge Your Editor</h3>
+                <h3>Trusted Workspaces &mdash; Let VS Code Run Fully</h3>
                 <span class="step-toggle-icon" aria-hidden="true">›</span>
               </button>
               <div class="step-content" id="step-04-content" role="region">
+                <div class="exercise-intro">
+                  <p>
+                    VS Code has a built-in security feature called
+                    <strong>Workspace Trust</strong>. When you open a folder
+                    for the first time, VS Code asks whether you trust it.
+                    Until you say yes, extensions will not activate, the
+                    integrated terminal is restricted, and tools like
+                    <strong>Claude Code</strong> and <strong>Live Server</strong>
+                    will not run. This is one of the first things to sort out
+                    after installation.
+                  </p>
+                </div>
+
+                <p class="method-section-title">Why it matters</p>
+
+                <ul class="setup-checklist">
+                  <li>
+                    <span class="check-icon">&#128268;</span>
+                    <span><strong>Extensions stay dormant</strong> — Claude Code, Live Server, and every other extension you install will not activate in an untrusted folder.</span>
+                  </li>
+                  <li>
+                    <span class="check-icon">&#9000;</span>
+                    <span><strong>The terminal is locked down</strong> — running Git commands or starting Claude Code from the VS Code terminal requires the folder to be trusted first.</span>
+                  </li>
+                  <li>
+                    <span class="check-icon">&#128202;</span>
+                    <span><strong>Features are silently disabled</strong> — syntax highlighting, IntelliSense, and formatting all depend on extensions. None of them work until trust is granted.</span>
+                  </li>
+                </ul>
+
+                <p class="method-section-title" style="margin-top: 24px;">Which folder to trust</p>
+
+                <p class="method-step">
+                  The key is to trust your <strong>parent projects folder</strong>
+                  — the one where all your repositories live — rather than
+                  trusting each repo one by one. That way, every project you
+                  clone into it is automatically trusted from day one.
+                </p>
+
+                <div class="concept-block concept-block--highlight">
+                  <p class="concept-label">Recommended folder to trust</p>
+                  <p>
+                    Trust the folder where you will keep <em>all</em> your
+                    code and cloned repositories — for example
+                    <code class="cmd-inline">Documents\Projects</code>. When
+                    VS Code trusts a parent folder, every sub-folder inside it
+                    (each individual repo) inherits that trust automatically.
+                    You will never need to click a trust prompt again for work
+                    inside that folder.
+                  </p>
+                </div>
+
+                <p class="method-section-title" style="margin-top: 24px;">How to trust a folder</p>
+
+                <p class="method-step">
+                  <strong>When prompted automatically.</strong> The first time
+                  you open a folder, VS Code shows a blue banner at the top of
+                  the screen asking:
+                </p>
+                <div class="cmd-block">
+                  Do you trust the authors of the files in this folder?
+                </div>
+                <p class="method-step">
+                  Click <strong>Yes, I trust the authors</strong>. If you want
+                  trust to extend to all sub-folders (recommended), tick
+                  <strong>"Trust the authors of all files in the parent folder"</strong>
+                  before clicking.
+                </p>
+
+                <p class="method-step" style="margin-top: 12px;">
+                  <strong>To manage trust manually at any time.</strong> Open
+                  the Command Palette with
+                  <code class="cmd-inline">Ctrl + Shift + P</code>, type
+                  <strong>Manage Workspace Trust</strong>, and press Enter. From
+                  there you can add, remove, or review trusted folders at any
+                  time.
+                </p>
+
+                <div class="part-hint">
+                  💡&nbsp; If you opened VS Code, installed extensions, and
+                  none of them seem to be doing anything — an untrusted folder
+                  is the most likely cause. Open Manage Workspace Trust and
+                  check whether your current folder is listed as trusted.
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 5: EXTENSIONS -->
+          <div class="step-card collapsible" id="step-05">
+            <div class="step-number">05</div>
+            <div class="step-body">
+              <button
+                class="step-toggle"
+                aria-expanded="false"
+                aria-controls="step-05-content"
+              >
+                <h3>Extensions &mdash; Supercharge Your Editor</h3>
+                <span class="step-toggle-icon" aria-hidden="true">›</span>
+              </button>
+              <div class="step-content" id="step-05-content" role="region">
                 <div class="exercise-intro">
                   <p>
                     Extensions are add-ons that give VS Code new capabilities.
