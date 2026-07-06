@@ -1,63 +1,61 @@
-# FZTW — From Zero to Workflow
+# From Zero to WoW
 
-> An introductory wiki for the **Data & AI Strategy** team at Accenture to get started with Git, GitHub, and VS Code.
+> A beginner-friendly wiki for the **Data & AI Strategy** team at Accenture — covering Git, GitHub, and VS Code from first principles.
 
----
-
-## Overview
-
-**From Zero to Workflow** is a static, single-site wiki designed for team members who are new to version control and collaborative development. It covers the full workflow — from setting up a repository and configuring Git, to branching, committing, raising pull requests, and resolving merge conflicts — alongside a VS Code setup guide and a curated library of learning resources.
-
-There is no build step, no package manager, and no external dependencies. Everything runs directly in a browser.
+Made for team members with no prior experience. No build step, no dependencies, runs directly in a browser.
 
 ---
 
 ## Pages
 
-| Page | File | Description |
-|---|---|---|
-| Home | `index.html` | Landing page and overview of the wiki |
-| Git & GitHub | `pages/git-github.html` | Step-by-step guide to collaborative Git & GitHub workflows |
-| VS Code | `pages/vscode.html` | Installation guide, first-time setup, and recommended extensions |
-| Resources | `pages/docs.html` | Curated links to official docs, free courses, videos, and cheat sheets |
+| Page | Path | What it covers |
+|------|------|----------------|
+| **Home** | `index.html` | Overview and navigation |
+| **Git & GitHub** | `pages/git-github.html` | Full workflow: repo setup → branching → PRs → conflicts → publishing |
+| **VS Code** | `pages/vscode.html` | Installation, first-time setup, and recommended extensions |
+| **Resources** | `pages/docs.html` | Official docs, free courses, video tutorials, and cheat sheets |
+| **Team** | `pages/team.html` | Who's on the team |
 
 ---
 
-## Git & GitHub Guide — Topics Covered
+## Git & GitHub guide — steps covered
 
-1. Set up a private repository and configure Git identity
-2. Create branches and make commits
-3. Undo changes — uncommitted and committed
-4. Keep secrets off GitHub with local data files and `.gitignore`
-5. Push your work to GitHub
-6. Create a pull request to merge into `main`
-7. Merge results and resolve conflicts
+| # | Topic |
+|---|-------|
+| 01 | Set up a private repository and configure your Git identity |
+| 02 | Create branches and make commits |
+| 03 | Undo changes — before and after committing |
+| 04 | Keep private data off GitHub with `.gitignore` |
+| 05 | Push your work to GitHub |
+| 06 | Open a pull request to merge into `main` |
+| 07 | Resolve merge conflicts |
+| 08 | Publish your project with GitHub Pages |
 
-Each topic provides two paths: using **Claude Code** (AI-assisted) or **PowerShell + Git** commands directly.
+Every step offers two paths: **Claude Code** (AI-assisted, plain English) or **PowerShell + Git** (manual commands).
 
 ---
 
-## Running Locally
+## Running locally
 
-No installation required. Open `index.html` directly in any modern browser:
+No installation required. Open `index.html` in any modern browser:
 
 ```
 # Option A — double-click
-Open index.html in your file explorer
+Open index.html in File Explorer
 
-# Option B — VS Code Live Server
+# Option B — VS Code Live Server (required for pages that load local data files)
 Right-click index.html in VS Code → Open with Live Server
 ```
 
 ---
 
-## Project Structure
+## Project structure
 
 ```
 fztw/
 ├── index.html          # Home page
 ├── styles.css          # Shared styles
-├── script.js           # Shared scripts (header scroll behaviour)
+├── script.js           # Shared scripts (header scroll, animations)
 ├── assets/
 │   └── favicon.svg
 └── pages/
@@ -69,31 +67,35 @@ fztw/
     ├── vscode.js
     ├── docs.html       # Learning resources
     ├── docs.css
-    └── docs.js
+    ├── docs.js
+    ├── team.html       # Team page
+    └── team.css
 ```
 
 ---
 
 ## Contributing
 
-This repo is used as a hands-on learning environment. Each contributor works on their own branch and opens a pull request to merge into `main`.
+This repo is the hands-on exercise environment. Each contributor works on their own branch and opens a pull request to merge into `main`.
 
-1. Accept the repository invitation (the repo owner sends this)
-2. Clone the repo to your local machine
-3. Create a branch with your name: `git checkout -b your-name`
-4. Make your changes, commit, and push
+1. Accept the repository invitation from the repo owner
+2. Clone the repo: `git clone <repo-url>`
+3. Create your branch: `git checkout -b your-name`
+4. Make changes, commit, and push
 5. Open a pull request on GitHub targeting `main`
 
-Follow the step-by-step guide in the **Git & GitHub** page for detailed instructions.
+See the **Git & GitHub** page for full step-by-step instructions.
 
 ---
 
-## Tech Stack
+## Tech stack
 
-- **HTML5** — semantic markup, no frameworks
-- **CSS3** — custom properties, `@keyframes`, `IntersectionObserver`-driven animations
-- **Vanilla JavaScript** — accordion toggling, scroll animations, filter tabs
-- **Google Fonts** — Space Grotesk
+| Layer | Details |
+|-------|---------|
+| Markup | HTML5 — semantic, no frameworks |
+| Styles | CSS3 — custom properties, `@keyframes`, scroll-driven animations |
+| Scripts | Vanilla JavaScript — accordion, filter tabs, `IntersectionObserver` |
+| Fonts | Google Fonts — Space Grotesk |
 
 ---
 

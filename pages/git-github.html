@@ -40,6 +40,7 @@
         <a href="git-github.html" class="active">Git &amp; GitHub</a>
         <a href="vscode.html">VS Code</a>
         <a href="docs.html">Resources</a>
+        <a href="team.html">Team</a>
       </nav>
       <div class="header-badge">
         <span class="live-dot"></span>
@@ -106,12 +107,10 @@
                 </p>
                 <p class="method-step">
                   <strong>3.</strong> Give it a name, for example:
-                  <code class="cmd-inline">team-holiday-proposal</code>.
+                  <code class="cmd-inline">team-project</code>.
                 </p>
                 <div class="warning-note">
-                  ⚠️&nbsp; <strong>Set visibility to Private.</strong> This is
-                  essential &mdash; you do not want Jaime reading your draft
-                  arguments before you are ready to present them.
+                  ⚠️&nbsp; <strong>Set visibility to Private.</strong> This means only people you explicitly invite can see the repository. Start Private — you can always make it public later once you are happy with the content.
                 </div>
                 <p class="method-step">
                   <strong>4.</strong> Leave all other options as they are and
@@ -143,10 +142,9 @@
                 </p>
                 <p class="method-step">
                   Before anyone can commit, Git needs to know who you are. Every
-                  commit is permanently stamped with a name and email — this is
-                  how your team (and Jaime) will know who made which change in
-                  the project history. You only need to do this once per
-                  computer.
+                  commit is permanently stamped with your name and email — this
+                  is how your team can see who made which change in the project
+                  history. You only need to do this once per computer.
                 </p>
 
                 <div class="method-block">
@@ -245,7 +243,7 @@
                     </p>
                     <div class="cmd-block">
                       "Clone my GitHub repository
-                      https://github.com/YOUR-USERNAME/team-holiday-proposal
+                      https://github.com/YOUR-USERNAME/team-project
                       into my current folder"
                     </div>
                     <p class="method-step">
@@ -272,15 +270,15 @@
                     </p>
                     <div class="cmd-block">
                       git clone
-                      https://github.com/YOUR-USERNAME/team-holiday-proposal.git
+                      https://github.com/YOUR-USERNAME/team-project.git
                     </div>
                     <p class="cmd-explain">
                       Downloads the repository from GitHub to your computer and
                       sets up the connection between the two automatically.
-                      Think of it as syncing a shared drive for the first time
+                      Think of it as syncing a shared folder for the first time
                       &mdash; after this, changes flow both ways.
                     </p>
-                    <div class="cmd-block">cd team-holiday-proposal</div>
+                    <div class="cmd-block">cd team-project</div>
                     <p class="cmd-explain">
                       Moves your terminal session into the repository folder.
                       <strong>This is essential</strong> — Git commands only
@@ -319,12 +317,12 @@
               <div class="step-content" id="step-02-content" role="region">
                 <div class="exercise-intro">
                   <p>
-                    With your shared repository in place, it is time for each
-                    team member to start contributing. In this exercise everyone
-                    creates their own <strong>branch</strong>, makes changes to
-                    the project, and <strong>commits</strong> those changes.
-                    Pull requests and merging come later — for now the goal is
-                    to get comfortable with the core rhythm of working in Git.
+                    With your shared repository in place, each team member can
+                    start contributing. Everyone creates their own
+                    <strong>branch</strong>, makes changes to the project, and
+                    <strong>commits</strong> those changes. Pull requests and
+                    merging are covered in the next steps — for now the goal is
+                    to get comfortable with the everyday rhythm of working in Git.
                   </p>
                 </div>
 
@@ -361,7 +359,7 @@
                   <ul class="tips-list">
                     <li>Commit early and often. Do not wait until the end of your session.</li>
                     <li>Each commit should represent one completed thought — adding a paragraph, fixing a typo, updating a section heading.</li>
-                    <li>Write messages in plain English: <em>"Add intro paragraph for the holiday pitch"</em> is good. <em>"stuff"</em> or <em>"changes"</em> is not.</li>
+                    <li>Write messages in plain English: <em>"Add intro paragraph to the about section"</em> is good. <em>"stuff"</em> or <em>"changes"</em> is not.</li>
                     <li>A good rule of thumb: your message should complete the sentence <em>"If applied, this commit will&hellip;"</em></li>
                     <li>There is no such thing as too many commits. You cannot overdo it.</li>
                   </ul>
@@ -383,7 +381,7 @@
                   repository folder. Every time you start a new session you
                   need to navigate back into it:
                   <div style="margin-top: 8px;">
-                    <code class="cmd-inline">cd team-holiday-proposal</code>
+                    <code class="cmd-inline">cd team-project</code>
                   </div>
                   If you are not sure where the folder is, right-click it in
                   File Explorer, select <strong>Copy as path</strong>, and
@@ -525,7 +523,7 @@
                       <em>"Add hero section headline"</em> beats
                       <em>"update file"</em> every time. The
                       <code class="cmd-inline">-m</code> flag lets you write the
-                      message inline.
+                      message directly in the command.
                     </p>
                     <div class="warning-note">
                       🔁&nbsp; <strong>Repeat this routine often.</strong>
@@ -801,13 +799,13 @@
                   </p>
                   <div class="cmd-block" style="margin-top: 10px; white-space: pre;">&#123;
   "teamName": "Data &amp; AI Strategy",
-  "destination": "Lisbon",
-  "budget": "5,000"
+  "projectName": "From Zero to Workflow",
+  "contactEmail": "team@accenture.com"
 &#125;</div>
                   <p style="margin-top: 8px; font-size: 0.84rem; color: var(--acc-text-muted); line-height: 1.65;">
                     Your HTML page can read this file automatically and display
                     those values wherever you tell it to. You update the file,
-                    the page updates. No file on GitHub ever changes.
+                    the page updates. The file never gets uploaded to GitHub.
                   </p>
                 </div>
 
@@ -872,15 +870,14 @@
                     </p>
                     <div class="cmd-block">
                       "Create a file called team-data.json with the following
-                      information: team name is '[your team name]', destination
-                      is '[your chosen holiday destination]', budget is
-                      '[amount]', and team members are '[name 1]', '[name 2]',
-                      '[name 3]'"
+                      information: team name is '[your team name]', project name
+                      is '[your project name]', and team members are '[name 1]',
+                      '[name 2]', '[name 3]'"
                     </div>
                     <p class="cmd-explain">
-                      Claude Code will create the file in the correct JSON
-                      format. This file stays on your computer only — it is not
-                      committed anywhere yet.
+                      Claude Code will create the file in the correct format.
+                      This file stays on your computer only — it is not
+                      uploaded to GitHub.
                     </p>
                   </div>
                 </div>
@@ -896,32 +893,30 @@
                       loads its content from the JSON file:
                     </p>
                     <div class="cmd-block">
-                      "Update index.html so that it reads team name, destination,
-                      budget, and team members from team-data.json and displays
+                      "Update index.html so that it reads team name, project
+                      name, and team members from team-data.json and displays
                       them in the page. Where those values currently appear as
                       plain text, replace them with placeholders that get filled
                       in automatically when the page loads"
                     </div>
                     <p class="cmd-explain">
-                      Claude Code will add a small piece of JavaScript to the
-                      page that fetches <code class="cmd-inline">team-data.json</code>
-                      when the page opens and fills in the right spots
-                      automatically. Your HTML becomes the blank form; the JSON
-                      file fills it in.
+                      Claude Code will add a small helper to the page that reads
+                      your data file when the page opens and fills in the right
+                      spots automatically. Your HTML becomes the blank form; the
+                      JSON file fills it in.
                     </p>
                   </div>
                 </div>
 
                 <div class="part-hint">
-                  💡&nbsp; <strong>Working with a local server.</strong> Reading
-                  a JSON file from HTML requires the page to be served through
-                  a local web server rather than opened directly as a file. If
-                  you are using VS Code, install the
-                  <strong>Live Server</strong> extension and click
-                  <strong>Go Live</strong> at the bottom of the screen. Ask
-                  Claude Code to help you set this up if needed:
-                  <em>"Help me serve this project with a local web server so
-                  the JSON file can be loaded by the page"</em>.
+                  💡&nbsp; <strong>Opening the page correctly.</strong> For the
+                  page to read your data file, it needs to be launched through
+                  VS Code's <strong>Live Server</strong> — not by double-clicking
+                  the HTML file. Install the Live Server extension (see the VS
+                  Code page), then click <strong>Go Live</strong> at the bottom
+                  of VS Code. Ask Claude Code to help if needed:
+                  <em>"Help me open this project with Live Server so the data
+                  file loads correctly"</em>.
                 </div>
 
               </div>
@@ -975,8 +970,8 @@
                   </p>
                   <ul class="tips-list" style="margin-top: 10px;">
                     <li>Before pushing, confirm you are on your branch — your current branch is marked with an asterisk (*) when you run <code class="cmd-inline">git branch</code>.</li>
-                    <li><strong>Make sure all your changes are committed before pushing.</strong> Git only sends commits to GitHub — any unsaved edits or uncommitted changes will not be included. Run through the commit routine from Exercise 2 first, then push.</li>
-                    <li>Get into the habit: commit often during your session, then push once at the end to share your work with the team.</li>
+                    <li><strong>Make sure all your changes are committed before pushing.</strong> Git only sends commits to GitHub — any unsaved edits or uncommitted changes will not be included. Run through the commit routine from Step 2 first, then push.</li>
+                    <li>Get into the habit: commit often during your session, then push once at the end. This keeps GitHub up to date and means your work is always backed up, even if something happens to your computer.</li>
                   </ul>
                 </div>
 
@@ -1000,7 +995,7 @@
                       Claude Code will run <code class="cmd-inline">git status</code>
                       and tell you in plain English whether there is anything
                       left to commit. If there is, go back to the commit steps
-                      in Exercise 2 before continuing.
+                      in Step 2 before continuing.
                     </p>
                     <p class="method-step">
                       <strong>2.</strong> When everything is committed, push:
@@ -1024,10 +1019,10 @@
                     </p>
                     <div class="cmd-block">git status</div>
                     <p class="cmd-explain">
-                      If this shows modified or untracked files, run through
-                      the <code class="cmd-inline">git add .</code> →
+                      If this shows any changes that have not been committed
+                      yet, run through the <code class="cmd-inline">git add .</code> →
                       <code class="cmd-inline">git commit -m "..."</code>
-                      routine from Exercise 2 before pushing. Only committed
+                      routine from Step 2 before pushing. Only committed
                       changes will be sent to GitHub.
                     </p>
                     <p class="method-step">
@@ -1038,12 +1033,6 @@
                       Git sends all commits made since the last push to your
                       branch on GitHub. That is all there is to it.
                     </p>
-                    <div class="part-hint">
-                      💡&nbsp; <strong>Get into the habit:</strong> commit
-                      often during your session, then push once at the end.
-                      This keeps GitHub current and means your work is always
-                      backed up even if something happens to your computer.
-                    </div>
                   </div>
                 </div>
 
@@ -1092,7 +1081,7 @@
                 <div class="concept-block concept-block--highlight">
                   <p class="concept-label">Before you open a pull request</p>
                   <ul class="tips-list">
-                    <li>Make sure you have <strong>committed and pushed</strong> all your latest changes (see Exercise 5) — a PR only includes what is already on GitHub.</li>
+                    <li>Make sure you have <strong>committed and pushed</strong> all your latest changes (see Step 5) — a PR only includes what is already on GitHub.</li>
                     <li>Double-check your branch is <strong>not</strong> <code class="cmd-inline">main</code>. You are merging <em>from</em> your branch <em>into</em> <code class="cmd-inline">main</code>, not the other way around.</li>
                     <li>Give your PR a clear title and a short description so the reviewer knows what to look for and why.</li>
                   </ul>
@@ -1299,11 +1288,12 @@ Their version of the line(s)
                     <div class="cmd-block">git pull origin main</div>
                     <p class="cmd-explain">
                       Git downloads the latest version of
-                      <code class="cmd-inline">main</code> from GitHub and
-                      attempts to merge it into your branch. If there are no
-                      conflicts the command completes silently. If there are,
-                      Git lists the conflicted files and pauses — do not close
-                      the terminal.
+                      <code class="cmd-inline">main</code> from GitHub
+                      (<code class="cmd-inline">origin</code> is just Git's
+                      name for your GitHub copy) and attempts to merge it into
+                      your branch. If there are no conflicts the command
+                      completes silently. If there are, Git lists the
+                      conflicted files and pauses — do not close the terminal.
                     </p>
                   </div>
                 </div>
