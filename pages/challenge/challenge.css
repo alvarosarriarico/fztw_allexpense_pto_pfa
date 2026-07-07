@@ -19,7 +19,7 @@
   /* poster frame is the always-visible base — imagery shows even before the video plays */
   background: #ece7f4 url("../../assets/challenge-poster.jpg") center / cover
     no-repeat;
-  filter: blur(3px) saturate(1.08);
+  /* filter: blur(3px) saturate(1.08); */
 }
 .challenge-video-bg video {
   position: absolute;
@@ -412,10 +412,14 @@
 /* DONE / SUCCESS */
 .challenge-done {
   margin-top: 18px;
-  background: rgba(0, 168, 98, 0.08);
-  border: 1px solid rgba(0, 168, 98, 0.28);
+  background: rgba(255, 255, 255, 0.85);
+  background-image: linear-gradient(135deg, rgba(0, 168, 98, 0.14), rgba(0, 168, 98, 0.07));
+  border: 1px solid rgba(0, 168, 98, 0.4);
+  border-left: 3px solid #00a862;
   border-radius: 14px;
   padding: 16px 20px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 18px rgba(0, 168, 98, 0.12);
   opacity: 0;
   animation: fade-up 500ms ease forwards 680ms;
 }
