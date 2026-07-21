@@ -69,9 +69,9 @@ fztw/
     ├── git-github.html # Git & GitHub guide
     ├── git-github.css
     ├── git-github.js
-    ├── vscode.html     # VS Code setup guide
-    ├── vscode.css
-    ├── vscode.js
+    ├── installation.html     # Installation and setup guide
+    ├── installation.css
+    ├── installation.js
     ├── docs.html       # Learning resources
     ├── docs.css
     ├── docs.js
